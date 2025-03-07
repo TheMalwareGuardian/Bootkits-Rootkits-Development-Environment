@@ -3,7 +3,7 @@
 This repository is part of my effort to make Bootkit & Rootkit development more accessible. Setting up a proper environment for low-level development can be tedious and time-consuming, so the scripts provided here automate the setup process, making it easier to configure and start experimenting with bootkits and rootkits.
 
 <p align="center">
-  <img src="Images/Logos/Logo_Bootkits_Rootkits_Development_Environment.png">
+<img src="Images/Logos/Logo_Bootkits_Rootkits_Development_Environment.png">
 </p>
 
 
@@ -54,46 +54,50 @@ To automate the creation and setup of your development environment, follow these
 
 ### Usage Example
 
+<p align="center">
+	<img width="800px" src="Images/Illustrations/Run_Script_Setup_Environment.png">
+</p>
+
 The script simplifies the following steps:
 
 ```
 ==============================================================================================
 Overview:
- - PowerShell Script for Automating Bootkits/Rootkits Development Environment Setup in Windows
+- PowerShell Script for Automating Bootkits/Rootkits Development Environment Setup in Windows
 Note:
- - All options have been tested on the latest version of Windows 11 24H2
+- All options have been tested on the latest version of Windows 11 24H2
 LinkedIn:
- - https://www.linkedin.com/in/vazquez-vazquez-alejandro/
+- https://www.linkedin.com/in/vazquez-vazquez-alejandro/
 Github:
- - https://github.com/TheMalwareGuardian/
+- https://github.com/TheMalwareGuardian/
 ==============================================================================================
 
 
 ------------------------------------------- MENU ---------------------------------------------
- BOOTKITS
-        1a. Bootkits   - Requirements              -> Visual Studio 2019 Community + Git + Python + NASM + ASL
-        1b. Bootkits   - Set Up Environment        -> EDK2
-        1c. Bootkits   - Tools                     -> UEFI Scanners
-        1d. Bootkits   - PoCs                      -> UEFI Applications
+BOOTKITS
+		1a. Bootkits   - Requirements              -> Visual Studio 2019 Community + Git + Python + NASM + ASL
+		1b. Bootkits   - Set Up Environment        -> EDK2
+		1c. Bootkits   - Tools                     -> UEFI Scanners
+		1d. Bootkits   - PoCs                      -> UEFI Applications
 
- DEBUGGING
-        2a. Debugging  - Requirements              -> WinDbg
-        2b. Debugging  - Set Up Environment        -> Enable Debugging
-        2c. Debugging  - Tools                     -> Microsoft Sysinternals Suite + Process Hacker
-        2d. Debugging  - Scripting                 -> PoCs - WinDbg Classic + JavaScript + Python PYKD + WinDbg Extensions
-        2e. Debugging  - Debugging Diagram         -> Host (Debugger) + Target (Debugee)
+DEBUGGING
+		2a. Debugging  - Requirements              -> WinDbg
+		2b. Debugging  - Set Up Environment        -> Enable Debugging
+		2c. Debugging  - Tools                     -> Microsoft Sysinternals Suite + Process Hacker
+		2d. Debugging  - Scripting                 -> PoCs - WinDbg Classic + JavaScript + Python PYKD + WinDbg Extensions
+		2e. Debugging  - Debugging Diagram         -> Host (Debugger) + Target (Debugee)
 
- ROOTKITS
-        3a. Rootkits   - Requirements              -> Visual Studio 2022 Community + SDK + WDK + Visual Studio Code
-        3b. Rootkits   - Set Up Environment        -> Enable Test Mode + Disable Integrity Checks
-        3c. Rootkits   - Tools                     -> OSR Driver Loader + Ghydra + IDA Free
-        3d. Rootkits   - PoCs                      -> Kernel Mode Drivers & Console Applications
+ROOTKITS
+		3a. Rootkits   - Requirements              -> Visual Studio 2022 Community + SDK + WDK + Visual Studio Code
+		3b. Rootkits   - Set Up Environment        -> Enable Test Mode + Disable Integrity Checks
+		3c. Rootkits   - Tools                     -> OSR Driver Loader + Ghydra + IDA Free
+		3d. Rootkits   - PoCs                      -> Kernel Mode Drivers & Console Applications
 
- RESOURCES
-        4a. Resources  - My Repositories           -> A compilation of resources dedicated to bootkit and rootkit development
+RESOURCES
+		4a. Resources  - My Repositories           -> A compilation of resources dedicated to bootkit and rootkit development
 
- PROGRAM TERMINATION
-        Q. Exit
+PROGRAM TERMINATION
+		Q. Exit
 ----------------------------------------------------------------------------------------------
 Choose an option: 3a
 You have selected the option 'Rootkits - Requirements -> Visual Studio 2022 Community + SDK + WDK + Visual Studio Code'
@@ -110,7 +114,7 @@ Do you want to proceed? (Press 'Y'):
 
 ## 🖥️ Setting Up the Environment for Developing Bootkits and Rootkits on Linux
 
-> **🚧 Coming Soon... 🚧**  
+> **🚧 Coming Soon... 🚧**
 > Work in progress. Stay tuned for updates!
 
 | Feature                | Status          |
@@ -145,9 +149,9 @@ To help both beginners and experienced developers, I've also put together a coll
 
 If you're looking for simple Bootkit & Rootkit projects to get started, check out these repositories, where I share foundational examples to help you build your own:
 
-🔹 [TheMalwareGuardian: Abismo - Windows UEFI Bootkit](https://github.com/TheMalwareGuardian/Abismo)
+📌 [TheMalwareGuardian: Abismo - Windows UEFI Bootkit](https://github.com/TheMalwareGuardian/Abismo)
 
-🔹 [TheMalwareGuardian: Bentico - Windows Rootkit](https://github.com/TheMalwareGuardian/Bentico)
+📌 [TheMalwareGuardian: Bentico - Windows Rootkit](https://github.com/TheMalwareGuardian/Bentico)
 
 
 ---
