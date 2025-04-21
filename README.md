@@ -104,6 +104,10 @@ You have selected the option 'Rootkits - Requirements -> Visual Studio 2022 Comm
 Do you want to proceed? (Press 'Y'):
 ```
 
+### Video Walkthrough
+
+To make it even easier, I've prepared a complete video walkthrough that shows how to use the setup script step-by-step. From installing dependencies to running your first Bootkit and Rootkit builds, everything is covered visually. Watch the full video [here](https://github.com/TheMalwareGuardian/Bootkits-Rootkits-Development-Environment/tree/main/Videos/Setup_Environment_Windows.mp4).
+
 
 ---
 ---
