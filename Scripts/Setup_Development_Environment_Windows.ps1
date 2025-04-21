@@ -3,19 +3,22 @@
 $ConfigURLs = @{
 	# My
 	"URLMyRepository" = "https://github.com/TheMalwareGuardian/"
+	"URLMyRepositoryEnvironment" = "https://github.com/TheMalwareGuardian/Bootkits-Rootkits-Development-Environment"
+	"URLMyRepositoryAwesome" = "https://github.com/TheMalwareGuardian/Awesome-Bootkits-Rootkits-Development"
+	"URLMyRepositoryBootkit" = "https://github.com/TheMalwareGuardian/Abismo"
+	"URLMyRepositoryRootkit" = "https://github.com/TheMalwareGuardian/Bentico"
+	"URLMyRepositoryDebugging" = "https://github.com/TheMalwareGuardian/WinDbg_Scripting"
 	"URLMyLinkedin" = "https://www.linkedin.com/in/vazquez-vazquez-alejandro/"
 	# Bootkits Requirements
 	"URLVisualStudio2019" = "https://download.visualstudio.microsoft.com/download/pr/7c09e2e8-2b3e-4213-93ab-5646874f8a2b/0ac797413a56c6b2772f48a567a32cdddd3b739f5b2af649fcf90be4245762ff/vs_Community.exe"
-	"URLGit" = "https://github.com/git-for-windows/git/releases/download/v2.47.1.windows.1/Git-2.47.1-64-bit.exe"
+	"URLGit" = "https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe"
 	"URLPython39" = "https://www.python.org/ftp/python/3.9.0/python-3.9.0-amd64.exe"
 	"URLNasm" = "https://www.nasm.us/pub/nasm/releasebuilds/2.16.03/win64/nasm-2.16.03-installer-x64.exe"
-	"URLAsl" = "https://downloadmirror.intel.com/843401/iasl-win-20241212.zip"
+	"URLAsl" = "https://downloadmirror.intel.com/852052/iasl-win-20250404.zip"
 	# Bootkits Setup
 	"URLEdk2" = "https://github.com/tianocore/edk2"
 	# Bootkits Tools
-	"URLUefiTool" = "https://github.com/LongSoft/UEFITool/archive/refs/heads/new_engine.zip"
-	"URLChipsec" = "https://github.com/chipsec/chipsec/archive/refs/heads/main.zip"
-	"URLFwHunt" = "https://github.com/binarly-io/FwHunt/archive/refs/heads/main.zip"
+	"URLUefiTool" = "https://github.com/LongSoft/UEFITool/releases/download/A70/UEFITool_NE_A70_win64.zip"
 	# Debugging Requirements
 	"URLWinDbg" = "https://windbg.download.prss.microsoft.com/dbazure/prod/1-0-0/windbg.appinstaller"
 	# Debugging Tools
@@ -25,13 +28,13 @@ $ConfigURLs = @{
 	"URLPykdWhl" = "https://files.pythonhosted.org/packages/12/2d/fabb94c8bdbfc1748da0f21867ed44eb12a6b016bfe87abe5872ba75d6a3/pykd-0.3.4.15-cp39-none-win_amd64.whl"
 	"URLPykdDll" = "https://raw.githubusercontent.com/TheMalwareGuardian/WinDbg_Scripting/refs/heads/main/ScriptsHelloWorld/PyKd/pykd_ext_2.0.0.25/x64/pykd.dll"
 	# Rootkits Requirements
-	"URLVisualStudio2022" = "https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030:4ebb8042bddf497187f8b93fc1736d56"
-	"URLSdk" = "https://download.microsoft.com/download/e/b/3/eb320eb1-b21e-4e6e-899e-d6aec552ecb0/KIT_BUNDLE_WINDOWSSDK_MEDIACREATION/winsdksetup.exe"
-	"URLWdk" = "https://download.microsoft.com/download/a/0/4/a04a6ea0-d70d-496f-9949-a73e283be017/KIT_BUNDLE_WDK_MEDIACREATION/wdksetup.exe"
-	"URLVisualStudioCode" = "https://vscode.download.prss.microsoft.com/dbazure/download/stable/33fc5a94a3f99ebe7087e8fe79fbe1d37a251016/VSCodeUserSetup-x64-1.97.0.exe"
+	"URLVisualStudio2022" = "https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030:ce57ce5636df4f45953c5c8181aef117"
+	"URLSdk" = "https://download.microsoft.com/download/f335ca28-1861-4b21-b14b-4bac3ec73d7f/KIT_BUNDLE_WINDOWSSDK_MEDIACREATION/winsdksetup.exe"
+	"URLWdk" = "https://download.microsoft.com/download/768f5d94-c365-4183-b55a-76d9abcebf52/KIT_BUNDLE_WDK_MEDIACREATION/wdksetup.exe"
+	"URLVisualStudioCode" = "https://vscode.download.prss.microsoft.com/dbazure/download/stable/4949701c880d4bdb949e3c0e6b400288da7f474b/VSCodeUserSetup-x64-1.99.2.exe"
 	# Rootkits Tools
 	"URLOsrLoader" = "https://www.osronline.com/OsrDown.cfm/osrloaderv30.zip"
-	"URLGhydra" = "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.3_build/ghidra_11.3_PUBLIC_20250205.zip"
+	"URLGhydra" = "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.3.1_build/ghidra_11.3.1_PUBLIC_20250219.zip"
 	"URLIdaFree" = "https://out7.hex-rays.com/files/idafree84_windows.exe"
 }
 
@@ -54,8 +57,8 @@ function Show-Menu {
 	Write-Host " BOOTKITS"
 	Write-Host "	1a. Bootkits   - Requirements              -> Visual Studio 2019 Community + Git + Python + NASM + ASL"
 	Write-Host "	1b. Bootkits   - Set Up Environment        -> EDK2"
-	Write-Host "	1c. Bootkits   - Tools                     -> UEFI Scanners"
-	Write-Host "	1d. Bootkits   - PoCs                      -> UEFI Applications + DXE Drivers"
+	Write-Host "	1c. Bootkits   - Tools                     -> UEFITool"
+	Write-Host "	1d. Bootkits   - PoCs                      -> UEFI Applications + DXE Runtime Drivers"
 	Write-Host ""
 	Write-Host " DEBUGGING"
 	Write-Host "	2a. Debugging  - Requirements              -> WinDbg"
@@ -173,8 +176,7 @@ function OptionBootkitsRequirements {
 		if ($install -eq "Y") {
 			Write-Host "Install iASL Compiler and Windows ACPI Tools" -ForegroundColor Yellow
 
-			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLAsl"], "$folderTempBootkitsRequirementBinariesPath\iasl-win.zip")
+			Invoke-WebRequest -Uri $ConfigURLs["URLAsl"] -OutFile "$folderTempBootkitsRequirementBinariesPath\iasl-win.zip"
 			Expand-Archive -Path "$folderTempBootkitsRequirementBinariesPath\iasl-win.zip" -DestinationPath "C:\ASL"
 			Write-Host "Installed - iASL Compiler and Windows ACPI Tools" -ForegroundColor Yellow
 		}
@@ -191,40 +193,57 @@ function OptionBootkitsSetUp {
 	$response = Read-Host "Do you want to proceed? (Press 'Y')"
 	if ($response -eq "Y") {
 
-		# ABR_Bootkits_SetUp
-		$folderBootkitsSetUp = "ABR_Bootkits_SetUp"
-		$folderBootkitsSetUpPath = Join-Path -Path $PWD -ChildPath $folderBootkitsSetUp
-
-		if (-not (Test-Path -Path $folderBootkitsSetUpPath)) {
-			New-Item -ItemType Directory -Path $folderBootkitsSetUpPath | Out-Null
-			Write-Host "Created folder: $folderBootkitsSetUpPath" -ForegroundColor Yellow
+		# Set destination to C:\ directly to avoid long path issues
+		$edk2Path = "C:\edk2"
+		if (-not (Test-Path -Path $edk2Path)) {
 
 			# EDK2
 			$install = Read-Host "Do you want to download and configure EDK2? (Y/N)"
 			if ($install -eq "Y") {
 				Write-Host "Install EDK2" -ForegroundColor Yellow
-
 				$folderBack = $PWD
-				Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URLEdk2"]) $folderBootkitsSetUpPath/edk2"
-				Set-Location -Path "$folderBootkitsSetUpPath\edk2"
 
-				Start-Process cmd.exe -ArgumentList "/c edksetup.bat Rebuild" -Wait
+				# Step 1: Clone repository
+				$clone = Read-Host "Do you want to clone the EDK2 repository into $($edk2Path)? (Y/N)"
+				if ($clone -eq "Y") {
+					Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URLEdk2"]) $edk2Path"
+				}
 
-				$filePath = "Conf/target.txt"
-				$lines = Get-Content $filePath
-				$lines = $lines -replace '^TARGET_ARCH .+ = .+', 'TARGET_ARCH = X64'
-				$lines = $lines -replace '^TOOL_CHAIN_TAG .+ = .+', 'TOOL_CHAIN_TAG = VS2019'
-				$lines = $lines -replace '^ACTIVE_PLATFORM .+ = .+', 'ACTIVE_PLATFORM = MdeModulePkg/MdeModulePkg.dsc'
-				$lines | Set-Content $filePath
+				# Step 2: Run edksetup.bat Rebuild
+				$rebuild1 = Read-Host "Do you want to run 'edksetup.bat Rebuild'? (Y/N)"
+				if ($rebuild1 -eq "Y") {
+					Set-Location -Path $edk2Path
+					Start-Process cmd.exe -ArgumentList "/c edksetup.bat Rebuild"
+				}
 
-				Start-Process cmd.exe -ArgumentList "/c edksetup.bat Rebuild && build" -Wait
+				# Step 3: Modify target.txt settings
+				$editTarget = Read-Host "Do you want to modify 'Conf/target.txt'? (Y/N)"
+				if ($editTarget -eq "Y") {
+					$filePath = "Conf/target.txt"
+					$lines = Get-Content $filePath
+					$lines = $lines -replace '^TARGET_ARCH .+ = .+', 'TARGET_ARCH = X64'
+					$lines = $lines -replace '^TOOL_CHAIN_TAG .+ = .+', 'TOOL_CHAIN_TAG = VS2019'
+					$lines = $lines -replace '^ACTIVE_PLATFORM .+ = .+', 'ACTIVE_PLATFORM = MdeModulePkg/MdeModulePkg.dsc'
+					$lines | Set-Content $filePath
+				}
 
-				Write-Host "A sample build has been executed using 'edksetup.bat Rebuild' and 'build' commands in a cmd window." -ForegroundColor Yellow
+				# Step 4: Run build
+				$rebuildBuild = Read-Host "Do you want to run 'edksetup.bat Rebuild' and 'build'? (Y/N)"
+				if ($rebuildBuild -eq "Y") {
+					Start-Process cmd.exe -ArgumentList "/c edksetup.bat Rebuild && build"
+				}
+
+				# Final confirmation
+				$finished = Read-Host "Have all steps completed successfully? (Y/N)"
+				if ($finished -eq "Y") {
+					Write-Host "EDK2 environment successfully configured." -ForegroundColor Yellow
+				}
+
 				Set-Location -Path "$folderBack"
 			}
 
 		} else {
-			Write-Host "The folder '$folderBootkitsSetUpPath' already exists in this directory. Unable to proceed." -ForegroundColor Red
+			Write-Host "The folder '$edk2Path' already exists in this directory. Unable to proceed." -ForegroundColor Red
 		}
 	}
 }
@@ -232,7 +251,7 @@ function OptionBootkitsSetUp {
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionBootkitsTools {
 
-	Write-Host "You have selected the option 'Bootkits - Tools -> UEFI Scanners'" -ForegroundColor Green
+	Write-Host "You have selected the option 'Bootkits - Tools -> UEFITool'" -ForegroundColor Green
 	$response = Read-Host "Do you want to proceed? (Press 'Y')"
 	if ($response -eq "Y") {
 
@@ -251,39 +270,13 @@ function OptionBootkitsTools {
 		if (-not (Test-Path -Path "$folderBootkitsToolsPath\UEFITool")) {
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLUefiTool"], "$folderBootkitsToolsPath\new_engine.zip")
-			Expand-Archive -Path "$folderBootkitsToolsPath\new_engine.zip" -DestinationPath "$folderBootkitsToolsPath\UEFITool"
-			Remove-Item "$folderBootkitsToolsPath\new_engine.zip"
+			$webClient.DownloadFile($ConfigURLs["URLUefiTool"], "$folderBootkitsToolsPath\UEFITool.zip")
+			Expand-Archive -Path "$folderBootkitsToolsPath\UEFITool.zip" -DestinationPath "$folderBootkitsToolsPath\UEFITool"
+			Remove-Item "$folderBootkitsToolsPath\UEFITool.zip"
 			Write-Host "Downloaded - UEFITool" -ForegroundColor Yellow
 			
 		} else {
 			Write-Host "The folder '$folderBootkitsToolsPath\UEFITool' already exists in this directory. Unable to proceed." -ForegroundColor Red
-		}
-
-		# Chipsec
-		if (-not (Test-Path -Path "$folderBootkitsToolsPath\Chipsec")) {
-
-			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLChipsec"], "$folderBootkitsToolsPath\main.zip")
-			Expand-Archive -Path "$folderBootkitsToolsPath\main.zip" -DestinationPath "$folderBootkitsToolsPath\Chipsec"
-			Remove-Item "$folderBootkitsToolsPath\main.zip"
-			Write-Host "Downloaded - Chipsec" -ForegroundColor Yellow
-
-		} else {
-			Write-Host "The folder '$folderBootkitsToolsPath\Chipsec' already exists in this directory. Unable to proceed." -ForegroundColor Red
-		}
-
-		# FwHunt
-		if (-not (Test-Path -Path "$folderBootkitsToolsPath\FwHunt")) {
-
-			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLFwHunt"], "$folderBootkitsToolsPath\main.zip")
-			Expand-Archive -Path "$folderBootkitsToolsPath\main.zip" -DestinationPath "$folderBootkitsToolsPath\FwHunt"
-			Remove-Item "$folderBootkitsToolsPath\main.zip"
-			Write-Host "Downloaded - FwHunt" -ForegroundColor Yellow
-
-		} else {
-			Write-Host "The folder '$folderBootkitsToolsPath\FwHunt' already exists in this directory. Unable to proceed." -ForegroundColor Red
 		}
 	}
 }
@@ -291,7 +284,7 @@ function OptionBootkitsTools {
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionBootkitsPoCs {
 
-	Write-Host "You have selected the option 'Bootkits - PoCs -> UEFI Applications + DXE Drivers'" -ForegroundColor Green
+	Write-Host "You have selected the option 'Bootkits - PoCs -> UEFI Applications + DXE Runtime Drivers'" -ForegroundColor Green
 	$response = Read-Host "Do you want to proceed? (Press 'Y')"
 	if ($response -eq "Y") {
 
@@ -304,22 +297,32 @@ function OptionBootkitsPoCs {
 			Write-Host "Created folder: $folderBootkitsPoCs" -ForegroundColor Yellow
 		}
 
-		# Hello World
-		$folderHelloWorld = "UEFI_Application_Hello_World"
-		$folderHelloWorldPath = Join-Path -Path $folderBootkitsPoCsPath -ChildPath $folderHelloWorld
-		if (-not (Test-Path -Path $folderHelloWorldPath)) {
-			New-Item -ItemType Directory -Path $folderHelloWorldPath | Out-Null
+		# Message
+		Write-Host ""
+		Write-Host "In earlier versions of this section, I used to include PoCs as embedded base64 blobs that were decoded and saved to disk." -ForegroundColor DarkGray
+		Write-Host "However, over time I've organized those PoCs into GitHub repositories, making it much easier to clone and explore them." -ForegroundColor DarkGray
+		Write-Host "These repositories are ideal for beginners who want to understand how UEFI Applications and DXE Runtime Drivers work in the context of Bootkits and low-level malware." -ForegroundColor DarkGray
+		Write-Host ""
+
+		# Abyss
+		$abyssPath = Join-Path -Path $folderBootkitsPoCsPath -ChildPath "Abyss"
+		if (-not (Test-Path -Path $abyssPath)) {
+			$cloneAbyss = Read-Host "Do you want to clone the Abyss repository? (Y/N)"
+			if ($cloneAbyss -eq "Y") {
+				Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URLMyRepositoryBootkit"]) `"$abyssPath`""
+				Write-Host "Repository cloned successfully. You'll find basic Bootkit PoCs inside the 'Bootkits' folder." -ForegroundColor Yellow
+			}
+		} else {
+			Write-Host "The folder '$abyssPath' already exists in this directory. Unable to proceed." -ForegroundColor Red
 		}
 
-		$contentHelloWorldC = "LyoqIEBmaWxlCiAgQnJpZWYgRGVzY3JpcHRpb24gb2YgVUVGSSBNeUhlbGxvV29ybGQKICBEZXRhaWxlZCBEZXNjcmlwdGlvbiBvZiBVRUZJIE15SGVsbG9Xb3JsZAogIENvcHlyaWdodCBmb3IgVUVGSSBNeUhlbGxvV29ybGQKICBMaWNlbnNlIGZvciBVRUZJIE15SGVsbG9Xb3JsZAoqKi8KCiNpbmNsdWRlIDxVZWZpLmg+CiNpbmNsdWRlIDxMaWJyYXJ5L1VlZmlBcHBsaWNhdGlvbkVudHJ5UG9pbnQuaD4KI2luY2x1ZGUgPExpYnJhcnkvVWVmaUxpYi5oPgoKLyoqCiAgYXMgdGhlIHJlYWwgZW50cnkgcG9pbnQgZm9yIHRoZSBhcHBsaWNhdGlvbi4KCiAgQHBhcmFtW2luXSBJbWFnZUhhbmRsZSAgICBUaGUgZmlybXdhcmUgYWxsb2NhdGVkIGhhbmRsZSBmb3IgdGhlIEVGSSBpbWFnZS4gIAogIEBwYXJhbVtpbl0gU3lzdGVtVGFibGUgICAgQSBwb2ludGVyIHRvIHRoZSBFRkkgU3lzdGVtIFRhYmxlLgogIAogIEByZXR2YWwgRUZJX1NVQ0NFU1MgICAgICAgVGhlIGVudHJ5IHBvaW50IGlzIGV4ZWN1dGVkIHN1Y2Nlc3NmdWxseS4KICBAcmV0dmFsIG90aGVyICAgICAgICAgICAgIFNvbWUgZXJyb3Igb2NjdXJzIHdoZW4gZXhlY3V0aW5nIHRoaXMgZW50cnkgcG9pbnQuCgoqKi8KRUZJX1NUQVRVUwpFRklBUEkKVWVmaU1haW4gKAogIElOIEVGSV9IQU5ETEUgICAgICAgIEltYWdlSGFuZGxlLAogIElOIEVGSV9TWVNURU1fVEFCTEUgICpTeXN0ZW1UYWJsZQogICkKewogIFByaW50KEwiSGVsbG8gV29ybGQgXG4iKTsgCiAgcmV0dXJuIEVGSV9TVUNDRVNTOwp9"
-		$contentHelloWorldCBytes = [System.Convert]::FromBase64String($contentHelloWorldC)
-		[System.IO.File]::WriteAllBytes("$folderHelloWorldPath\UEFI_Application_Hello_World.c", $contentHelloWorldCBytes)
-
-		$contentHelloWorldInf = "IyMgQGZpbGUKIyAgQnJpZWYgRGVzY3JpcHRpb24gb2YgVUVGSSBNeUhlbGxvV29ybGQKIyAgCiMgIERldGFpbGVkIERlc2NyaXB0aW9uIG9mIFVFRkkgTXlXaXphcmREcml2ZXIKIwojICBDb3B5cmlnaHQgZm9yIFVFRkkgIE15SGVsbG9Xb3JsZAojICAKIyAgTGljZW5zZSBmb3IgVUVGSSAgTXlIZWxsb1dvcmxkCiMgIAojIwoKW0RlZmluZXNdCiAgSU5GX1ZFUlNJT04gICAgICAgICAgICAgICAgICAgID0gMS4yNQogIEJBU0VfTkFNRSAgICAgICAgICAgICAgICAgICAgICA9IE15SGVsbG9Xb3JsZAogIEZJTEVfR1VJRCAgICAgICAgICAgICAgICAgICAgICA9ICNDb3B5IGFuZCBwYXN0ZSB0aGUgR1VJRCBmcm9tIGh0dHA6Ly93d3cuZ3VpZGdlbi5jb20vIGhlcmUKICBNT0RVTEVfVFlQRSAgICAgICAgICAgICAgICAgICAgPSBVRUZJX0FQUExJQ0FUSU9OCiAgVkVSU0lPTl9TVFJJTkcgICAgICAgICAgICAgICAgID0gMS4wCiAgRU5UUllfUE9JTlQgICAgICAgICAgICAgICAgICAgID0gVWVmaU1haW4KIwojIFRoZSBmb2xsb3dpbmcgaW5mb3JtYXRpb24gaXMgZm9yIHJlZmVyZW5jZSBvbmx5IGFuZCBub3QgcmVxdWlyZWQgYnkgdGhlIGJ1aWxkIHRvb2xzLgojCiMgIFZBTElEX0FSQ0hJVEVDVFVSRVMgICAgICAgICAgID0gSUEzMiBYNjQgSVBGIEVCQyBFdGMuLi4KIwoKW1NvdXJjZXNdCiAgTXlIZWxsb1dvcmxkLmMKCltQYWNrYWdlc10KICBNZGVQa2cvTWRlUGtnLmRlYwogIApbTGlicmFyeUNsYXNzZXNdCiAgVWVmaUFwcGxpY2F0aW9uRW50cnlQb2ludAogIFVlZmlMaWIKICAKW0d1aWRzXQoKW1BwaXNdCgpbUHJvdG9jb2xzXQoKW0ZlYXR1cmVQY2RdCgpbUGNkXQo="
-		$contentHelloWorldInfBytes = [System.Convert]::FromBase64String($contentHelloWorldInf)
-		[System.IO.File]::WriteAllBytes("$folderHelloWorldPath\UEFI_Application_Hello_World.inf", $contentHelloWorldInfBytes)
-
-		Write-Host "Created - UEFI Application (Hello World)" -ForegroundColor Yellow
+		# More PoCs
+		Write-Host ""
+		Write-Host "For more Proof-of-Concepts, check out the following repository:" -ForegroundColor Cyan
+		Write-Host "   * Awesome Bootkits & Rootkits Resources"
+		Write-Host "      -> Compilation of hundreds of resources, guides, videos, and more"
+		Write-Host "        $($ConfigURLs["URLMyRepositoryAwesome"])" -ForegroundColor DarkYellow
+		Write-Host ""
 	}
 }
 
@@ -834,44 +837,31 @@ function OptionRootkitsPoCs {
 			Write-Host "Created folder: $folderRootkitsPoCs" -ForegroundColor Yellow
 		}
 
-		# Hello World
-		$folderRootkitPoC1 = "Rootkit01_HelloWorld"
-		$folderRootkitPoC1Path = Join-Path -Path $folderRootkitsPoCsPath -ChildPath $folderRootkitPoC1
-		if (-not (Test-Path -Path $folderRootkitPoC1Path)) {
-			New-Item -ItemType Directory -Path $folderRootkitPoC1Path | Out-Null
+		# Message
+		Write-Host ""
+		Write-Host "In earlier versions of this section, I used to include PoCs as embedded base64 blobs that were decoded and saved to disk." -ForegroundColor DarkGray
+		Write-Host "However, over time I've organized those PoCs into GitHub repositories, making it much easier to clone and explore them." -ForegroundColor DarkGray
+		Write-Host "These repositories are ideal for beginners who want to understand how Kernel-Mode Drivers work in the context of Rootkits and low-level malware." -ForegroundColor DarkGray
+		Write-Host ""
+
+		# Benthic
+		$benthicPath = Join-Path -Path $folderRootkitsPoCsPath -ChildPath "Benthic"
+		if (-not (Test-Path -Path $benthicPath)) {
+			$clonebenthic = Read-Host "Do you want to clone the Benthic repository? (Y/N)"
+			if ($clonebenthic -eq "Y") {
+				Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URLMyRepositoryRootkit"]) `"$benthicPath`""
+				Write-Host "Repository cloned successfully. You'll find basic Rootkit PoCs inside the 'Rootkits' folder." -ForegroundColor Yellow
+			}
+		} else {
+			Write-Host "The folder '$benthicPath' already exists in this directory. Unable to proceed." -ForegroundColor Red
 		}
 
-		$contentRootkitPoC1Driver = ""
-		$contentRootkitPoC1DriverBytes = [System.Convert]::FromBase64String($contentRootkitPoC1Driver)
-		[System.IO.File]::WriteAllBytes("$folderRootkitPoC1Path\DriverHelloWorld.c", $contentRootkitPoC1DriverBytes)
-
-		$contentRootkitPoC1DriverNotes = ""
-		$contentRootkitPoC1DriverNotesBytes = [System.Convert]::FromBase64String($contentRootkitPoC1DriverNotes)
-		[System.IO.File]::WriteAllBytes("$folderRootkitPoC1Path\README.md", $contentRootkitPoC1DriverNotesBytes)
-
-		Write-Host "Created - Kernel Mode Driver (Hello World)" -ForegroundColor Yellow
-
-		# IOCTLs
-		$folderRootkitPoC2 = "Rootkit02_IOCTLs"
-		$folderRootkitPoC2Path = Join-Path -Path $folderRootkitsPoCsPath -ChildPath $folderRootkitPoC2
-		if (-not (Test-Path -Path $folderRootkitPoC2Path)) {
-			New-Item -ItemType Directory -Path $folderRootkitPoC2Path | Out-Null
-		}
-
-		$contentRootkitPoC2Driver = ""
-		$contentRootkitPoC2DriverBytes = [System.Convert]::FromBase64String($contentRootkitPoC2Driver)
-		[System.IO.File]::WriteAllBytes("$folderRootkitPoC2\DriverIOCTLs.c", $contentKMDFIOCTLsBytes)
-
-		$contentRootkitPoC2Application = ""
-		$contentRootkitPoC2ApplicationBytes = [System.Convert]::FromBase64String($contentRootkitPoC2Application)
-		[System.IO.File]::WriteAllBytes("$folderRootkitPoC2\ApplicationIOCTLs.c", $contentRootkitPoC2ApplicationBytes)
-
-		$contentRootkitPoC2Notes = ""
-		$contentRootkitPoC2NotesBytes = [System.Convert]::FromBase64String($contentRootkitPoC2Notes)
-		[System.IO.File]::WriteAllBytes("$folderRootkitPoC2\README.md", $contentRootkitPoC2NotesBytes)
-
-		Write-Host "Created - Kernel Mode Driver (IOCTLs)" -ForegroundColor Yellow
-
+		# More PoCs
+		Write-Host ""
+		Write-Host "For more Proof-of-Concepts, check out the following repository:" -ForegroundColor Cyan
+		Write-Host "   * Awesome Bootkits & Rootkits Resources"
+		Write-Host "      -> Compilation of hundreds of resources, guides, videos, and more"
+		Write-Host "        $($ConfigURLs["URLMyRepositoryAwesome"])" -ForegroundColor DarkYellow
 	}
 }
 
@@ -885,23 +875,22 @@ function OptionResourcesMyRepositories {
 		Write-Host "[+] My Resources and Repositories related to Bootkits & Rootkits:" -ForegroundColor Cyan
 		Write-Host "   * Bootkits & Rootkits Development Environment"
 		Write-Host "      -> Scripts to automate the development environment setup"
-		Write-Host "        https://github.com/TheMalwareGuardian/Bootkits-Rootkits-Development-Environment" -ForegroundColor Red
+		Write-Host "        $($ConfigURLs["URLMyRepositoryEnvironment"])" -ForegroundColor DarkYellow
 		Write-Host "   * Awesome Bootkits & Rootkits Resources"
 		Write-Host "      -> Compilation of hundreds of resources, guides, videos, and more"
-		Write-Host "        https://github.com/TheMalwareGuardian/Awesome-Bootkits-Rootkits-Development" -ForegroundColor Red
-		Write-Host "   * Abismo - UEFI Bootkit"
+		Write-Host "        $($ConfigURLs["URLMyRepositoryAwesome"])" -ForegroundColor DarkYellow
+		Write-Host "   * UEFI Bootkit"
 		Write-Host "      -> A UEFI-based bootkit for research into system boot and the development of UEFI applications and DXE drivers"
-		Write-Host "        https://github.com/TheMalwareGuardian/Abismo" -ForegroundColor Red
-		Write-Host "   * Bentico - Windows Kernel Rootkit"
+		Write-Host "        $($ConfigURLs["URLMyRepositoryBootkit"])" -ForegroundColor DarkYellow
+		Write-Host "   * Windows Kernel Rootkit"
 		Write-Host "      -> A kernel-mode rootkit for learning and experimentation with Windows internals"
-		Write-Host "        https://github.com/TheMalwareGuardian/Bentico" -ForegroundColor Red
+		Write-Host "        $($ConfigURLs["URLMyRepositoryRootkit"])" -ForegroundColor DarkYellow
 		Write-Host "   * WinDbg Scripting & Debugging"
 		Write-Host "      -> Scripts, commands, and documentation for Windows debugging"
-		Write-Host "        https://github.com/TheMalwareGuardian/WinDbg_Scripting" -ForegroundColor Red
+		Write-Host "        $($ConfigURLs["URLMyRepositoryDebugging"])" -ForegroundColor DarkYellow
 		Write-Host "[+] All repositories are public. Enjoy!" -ForegroundColor Green
 	}
 }
-
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 do {
