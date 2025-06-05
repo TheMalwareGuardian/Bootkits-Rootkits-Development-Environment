@@ -2,40 +2,42 @@
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 $ConfigURLs = @{
 	# My
-	"URLMyRepository" = "https://github.com/TheMalwareGuardian/"
-	"URLMyRepositoryEnvironment" = "https://github.com/TheMalwareGuardian/Bootkits-Rootkits-Development-Environment"
-	"URLMyRepositoryAwesome" = "https://github.com/TheMalwareGuardian/Awesome-Bootkits-Rootkits-Development"
-	"URLMyRepositoryBootkit" = "https://github.com/TheMalwareGuardian/Abismo"
-	"URLMyRepositoryRootkit" = "https://github.com/TheMalwareGuardian/Bentico"
-	"URLMyRepositoryDebugging" = "https://github.com/TheMalwareGuardian/WinDbg_Scripting"
-	"URLMyLinkedin" = "https://www.linkedin.com/in/vazquez-vazquez-alejandro/"
+	"URL_My_Repository" = "https://github.com/TheMalwareGuardian/"
+	"URL_My_RepositoryEnvironment" = "https://github.com/TheMalwareGuardian/Bootkits-Rootkits-Development-Environment"
+	"URL_My_RepositoryAwesome" = "https://github.com/TheMalwareGuardian/Awesome-Bootkits-Rootkits-Development"
+	"URL_My_RepositoryBootkit" = "https://github.com/TheMalwareGuardian/Abismo"
+	"URL_My_RepositoryRootkit" = "https://github.com/TheMalwareGuardian/Bentico"
+	"URL_My_RepositoryDebugging" = "https://github.com/TheMalwareGuardian/WinDbg_Scripting"
+	"URL_My_Linkedin" = "https://www.linkedin.com/in/vazquez-vazquez-alejandro/"
 	# Bootkits Requirements
-	"URLVisualStudio2019" = "https://download.visualstudio.microsoft.com/download/pr/7c09e2e8-2b3e-4213-93ab-5646874f8a2b/0ac797413a56c6b2772f48a567a32cdddd3b739f5b2af649fcf90be4245762ff/vs_Community.exe"
+	"URL_BootkitsRequirements_VisualStudio2019" = "https://download.visualstudio.microsoft.com/download/pr/7c09e2e8-2b3e-4213-93ab-5646874f8a2b/0ac797413a56c6b2772f48a567a32cdddd3b739f5b2af649fcf90be4245762ff/vs_Community.exe"
 	"URLGit" = "https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe"
-	"URLPython39" = "https://www.python.org/ftp/python/3.9.0/python-3.9.0-amd64.exe"
-	"URLNasm" = "https://www.nasm.us/pub/nasm/releasebuilds/2.16.03/win64/nasm-2.16.03-installer-x64.exe"
-	"URLAsl" = "https://downloadmirror.intel.com/852052/iasl-win-20250404.zip"
+	"URL_BootkitsRequirements_Python39" = "https://www.python.org/ftp/python/3.9.0/python-3.9.0-amd64.exe"
+	"URL_BootkitsRequirements_Nasm" = "https://www.nasm.us/pub/nasm/releasebuilds/2.16.03/win64/nasm-2.16.03-installer-x64.exe"
+	"URL_BootkitsRequirements_Asl" = "https://downloadmirror.intel.com/852052/iasl-win-20250404.zip"
 	# Bootkits Setup
-	"URLEdk2" = "https://github.com/tianocore/edk2"
+	"URL_BootkitsSetup_Edk2" = "https://github.com/tianocore/edk2"
 	# Bootkits Tools
-	"URLUefiTool" = "https://github.com/LongSoft/UEFITool/releases/download/A70/UEFITool_NE_A70_win64.zip"
+	"URL_BootkitsTools_UefiTool" = "https://github.com/LongSoft/UEFITool/releases/download/A70/UEFITool_NE_A70_win64.zip"
+	"URL_BootkitsTools_HxD" = "https://mh-nexus.de/downloads/HxDSetup.zip"
 	# Debugging Requirements
-	"URLWinDbg" = "https://windbg.download.prss.microsoft.com/dbazure/prod/1-0-0/windbg.appinstaller"
+	"URL_DebuggingRequirements_WinDbg" = "https://windbg.download.prss.microsoft.com/dbazure/prod/1-0-0/windbg.appinstaller"
 	# Debugging Tools
-	"URLSysinternalsSuite" = "https://download.sysinternals.com/files/SysinternalsSuite.zip"
-	"URLProcessHacker" = "https://downloads.sourceforge.net/project/processhacker/processhacker2/processhacker-2.39-setup.exe?ts=gAAAAABmbxthJ3fbZBaH0Nz2UUj3n-SNQHkB9Pc1mWp7xeLO9U9iSa5ZsmTSUuY93Ii9f7yFk3WZWokudbkymG4pJFqe05Iduw==&use_mirror=altushost-swe&r=https://processhacker.sourceforge.io/"
+	"URL_DebuggingTools_SysinternalsSuite" = "https://download.sysinternals.com/files/SysinternalsSuite.zip"
+	"URL_DebuggingTools_ProcessHacker" = "https://downloads.sourceforge.net/project/processhacker/processhacker2/processhacker-2.39-setup.exe?ts=gAAAAABmbxthJ3fbZBaH0Nz2UUj3n-SNQHkB9Pc1mWp7xeLO9U9iSa5ZsmTSUuY93Ii9f7yFk3WZWokudbkymG4pJFqe05Iduw==&use_mirror=altushost-swe&r=https://processhacker.sourceforge.io/"
 	# Debugging Scripting
-	"URLPykdWhl" = "https://files.pythonhosted.org/packages/12/2d/fabb94c8bdbfc1748da0f21867ed44eb12a6b016bfe87abe5872ba75d6a3/pykd-0.3.4.15-cp39-none-win_amd64.whl"
-	"URLPykdDll" = "https://raw.githubusercontent.com/TheMalwareGuardian/WinDbg_Scripting/refs/heads/main/ScriptsHelloWorld/PyKd/pykd_ext_2.0.0.25/x64/pykd.dll"
+	"URL_DebuggingScripting_PykdWhl" = "https://files.pythonhosted.org/packages/12/2d/fabb94c8bdbfc1748da0f21867ed44eb12a6b016bfe87abe5872ba75d6a3/pykd-0.3.4.15-cp39-none-win_amd64.whl"
+	"URL_DebuggingScripting_PykdDll" = "https://raw.githubusercontent.com/TheMalwareGuardian/WinDbg_Scripting/refs/heads/main/ScriptsHelloWorld/PyKd/pykd_ext_2.0.0.25/x64/pykd.dll"
 	# Rootkits Requirements
-	"URLVisualStudio2022" = "https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030:ce57ce5636df4f45953c5c8181aef117"
-	"URLSdk" = "https://download.microsoft.com/download/f335ca28-1861-4b21-b14b-4bac3ec73d7f/KIT_BUNDLE_WINDOWSSDK_MEDIACREATION/winsdksetup.exe"
-	"URLWdk" = "https://download.microsoft.com/download/768f5d94-c365-4183-b55a-76d9abcebf52/KIT_BUNDLE_WDK_MEDIACREATION/wdksetup.exe"
-	"URLVisualStudioCode" = "https://vscode.download.prss.microsoft.com/dbazure/download/stable/4949701c880d4bdb949e3c0e6b400288da7f474b/VSCodeUserSetup-x64-1.99.2.exe"
+	"URL_RootkitsRequirements_VisualStudio2022" = "https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030:ce57ce5636df4f45953c5c8181aef117"
+	"URL_RootkitsRequirements_Sdk" = "https://download.microsoft.com/download/f335ca28-1861-4b21-b14b-4bac3ec73d7f/KIT_BUNDLE_WINDOWSSDK_MEDIACREATION/winsdksetup.exe"
+	"URL_RootkitsRequirements_Wdk" = "https://download.microsoft.com/download/768f5d94-c365-4183-b55a-76d9abcebf52/KIT_BUNDLE_WDK_MEDIACREATION/wdksetup.exe"
+	"URL_RootkitsRequirements_VisualStudioCode" = "https://vscode.download.prss.microsoft.com/dbazure/download/stable/4949701c880d4bdb949e3c0e6b400288da7f474b/VSCodeUserSetup-x64-1.99.2.exe"
 	# Rootkits Tools
-	"URLOsrLoader" = "https://www.osronline.com/OsrDown.cfm/osrloaderv30.zip"
-	"URLGhydra" = "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.3.1_build/ghidra_11.3.1_PUBLIC_20250219.zip"
-	"URLIdaFree" = "https://out7.hex-rays.com/files/idafree84_windows.exe"
+	"URL_RootkitsTools_OsrLoader" = "https://www.osronline.com/OsrDown.cfm/osrloaderv30.zip"
+	"URL_RootkitsTools_GhidraJava" = "https://download.oracle.com/java/24/latest/jdk-24_windows-x64_bin.exe"
+	"URL_RootkitsTools_Ghidra" = "https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_11.3.1_build/ghidra_11.3.1_PUBLIC_20250219.zip"
+	"URL_RootkitsTools_IdaFree" = "https://out7.hex-rays.com/files/idafree84_windows.exe"
 }
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -47,9 +49,9 @@ function Show-Menu {
 	Write-Host "Note:"
 	Write-Host " - All options have been tested on the latest version of Windows 11 24H2"
 	Write-Host "LinkedIn:"
-	Write-Host " - $($ConfigURLs["URLMyLinkedin"])"
+	Write-Host " - $($ConfigURLs["URL_My_Linkedin"])"
 	Write-Host "Github:"
-	Write-Host " - $($ConfigURLs["URLMyRepository"])"
+	Write-Host " - $($ConfigURLs["URL_My_Repository"])"
 	Write-Host "=============================================================================================="
 	Write-Host ""
 	Write-Host ""
@@ -57,7 +59,7 @@ function Show-Menu {
 	Write-Host " BOOTKITS"
 	Write-Host "	1a. Bootkits   - Requirements              -> Visual Studio 2019 Community + Git + Python + NASM + ASL"
 	Write-Host "	1b. Bootkits   - Set Up Environment        -> EDK2"
-	Write-Host "	1c. Bootkits   - Tools                     -> UEFITool"
+	Write-Host "	1c. Bootkits   - Tools                     -> UEFITool + HxD"
 	Write-Host "	1d. Bootkits   - PoCs                      -> UEFI Applications + DXE Runtime Drivers"
 	Write-Host ""
 	Write-Host " DEBUGGING"
@@ -70,7 +72,7 @@ function Show-Menu {
 	Write-Host " ROOTKITS"
 	Write-Host "	3a. Rootkits   - Requirements              -> Visual Studio 2022 Community + SDK + WDK + Visual Studio Code"
 	Write-Host "	3b. Rootkits   - Set Up Environment        -> Enable Test Mode + Disable Integrity Checks"
-	Write-Host "	3c. Rootkits   - Tools                     -> OSR Driver Loader + Ghydra + IDA Free"
+	Write-Host "	3c. Rootkits   - Tools                     -> OSR Driver Loader + Ghidra + IDA Free"
 	Write-Host "	3d. Rootkits   - PoCs                      -> Kernel Mode Drivers & Console Applications"
 	Write-Host ""
 	Write-Host " RESOURCES"
@@ -103,7 +105,7 @@ function OptionBootkitsRequirements {
 			Write-Host "3. Install Visual Studio" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLVisualStudio2019"], "$folderTempBootkitsRequirementBinariesPath\vs_Community.exe")
+			$webClient.DownloadFile($ConfigURLs["URL_BootkitsRequirements_VisualStudio2019"], "$folderTempBootkitsRequirementBinariesPath\vs_Community.exe")
 			$process = Start-Process -FilePath "$folderTempBootkitsRequirementBinariesPath\vs_Community.exe" -PassThru
 			$process.WaitForExit()
 			while ($true) {
@@ -139,7 +141,7 @@ function OptionBootkitsRequirements {
 			Write-Host "Install Python 3.9" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLPython39"], "$folderTempBootkitsRequirementBinariesPath\python39.exe")
+			$webClient.DownloadFile($ConfigURLs["URL_BootkitsRequirements_Python39"], "$folderTempBootkitsRequirementBinariesPath\python39.exe")
 			$process = Start-Process -FilePath "$folderTempBootkitsRequirementBinariesPath\python39.exe" -PassThru
 			$process.WaitForExit()
 			while ($true) {
@@ -154,11 +156,11 @@ function OptionBootkitsRequirements {
 		# NASM
 		$install = Read-Host "Do you want to install Netwide Assembler (NASM)? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install NASM:" -ForegroundColor Yellow
+			Write-Host "Install Netwide Assembler (NASM):" -ForegroundColor Yellow
 			Write-Host "1. Install it in 'C:\nasm\'" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLNasm"], "$folderTempBootkitsRequirementBinariesPath\nasm.exe")
+			$webClient.DownloadFile($ConfigURLs["URL_BootkitsRequirements_Nasm"], "$folderTempBootkitsRequirementBinariesPath\nasm.exe")
 			$process = Start-Process -FilePath "$folderTempBootkitsRequirementBinariesPath\nasm.exe" -PassThru
 			$process.WaitForExit()
 			while ($true) {
@@ -176,7 +178,7 @@ function OptionBootkitsRequirements {
 		if ($install -eq "Y") {
 			Write-Host "Install iASL Compiler and Windows ACPI Tools" -ForegroundColor Yellow
 
-			Invoke-WebRequest -Uri $ConfigURLs["URLAsl"] -OutFile "$folderTempBootkitsRequirementBinariesPath\iasl-win.zip"
+			Invoke-WebRequest -Uri $ConfigURLs["URL_BootkitsRequirements_Asl"] -OutFile "$folderTempBootkitsRequirementBinariesPath\iasl-win.zip"
 			Expand-Archive -Path "$folderTempBootkitsRequirementBinariesPath\iasl-win.zip" -DestinationPath "C:\ASL"
 			Write-Host "Installed - iASL Compiler and Windows ACPI Tools" -ForegroundColor Yellow
 		}
@@ -195,55 +197,52 @@ function OptionBootkitsSetUp {
 
 		# Set destination to C:\ directly to avoid long path issues
 		$edk2Path = "C:\edk2"
-		if (-not (Test-Path -Path $edk2Path)) {
 
-			# EDK2
-			$install = Read-Host "Do you want to download and configure EDK2? (Y/N)"
-			if ($install -eq "Y") {
-				Write-Host "Install EDK2" -ForegroundColor Yellow
-				$folderBack = $PWD
+		# EDK2
+		$install = Read-Host "Do you want to download and configure EDK2? (Y/N)"
+		if ($install -eq "Y") {
+			Write-Host "Install EDK2" -ForegroundColor Yellow
+			$folderBack = $PWD
 
-				# Step 1: Clone repository
-				$clone = Read-Host "Do you want to clone the EDK2 repository into $($edk2Path)? (Y/N)"
-				if ($clone -eq "Y") {
-					Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URLEdk2"]) $edk2Path"
-				}
-
-				# Step 2: Run edksetup.bat Rebuild
-				$rebuild1 = Read-Host "Do you want to run 'edksetup.bat Rebuild'? (Y/N)"
-				if ($rebuild1 -eq "Y") {
-					Set-Location -Path $edk2Path
-					Start-Process cmd.exe -ArgumentList "/c edksetup.bat Rebuild"
-				}
-
-				# Step 3: Modify target.txt settings
-				$editTarget = Read-Host "Do you want to modify 'Conf/target.txt'? (Y/N)"
-				if ($editTarget -eq "Y") {
-					$filePath = "Conf/target.txt"
-					$lines = Get-Content $filePath
-					$lines = $lines -replace '^TARGET_ARCH .+ = .+', 'TARGET_ARCH = X64'
-					$lines = $lines -replace '^TOOL_CHAIN_TAG .+ = .+', 'TOOL_CHAIN_TAG = VS2019'
-					$lines = $lines -replace '^ACTIVE_PLATFORM .+ = .+', 'ACTIVE_PLATFORM = MdeModulePkg/MdeModulePkg.dsc'
-					$lines | Set-Content $filePath
-				}
-
-				# Step 4: Run build
-				$rebuildBuild = Read-Host "Do you want to run 'edksetup.bat Rebuild' and 'build'? (Y/N)"
-				if ($rebuildBuild -eq "Y") {
-					Start-Process cmd.exe -ArgumentList "/c edksetup.bat Rebuild && build"
-				}
-
-				# Final confirmation
-				$finished = Read-Host "Have all steps completed successfully? (Y/N)"
-				if ($finished -eq "Y") {
-					Write-Host "EDK2 environment successfully configured." -ForegroundColor Yellow
-				}
-
-				Set-Location -Path "$folderBack"
+			# Step 1: Clone repository
+			$clone = Read-Host "Do you want to clone the EDK2 repository into $($edk2Path)? (Y/N)"
+			if ($clone -eq "Y") {
+				Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URL_BootkitsSetup_Edk2"]) $edk2Path"
 			}
 
-		} else {
-			Write-Host "The folder '$edk2Path' already exists in this directory. Unable to proceed." -ForegroundColor Red
+			# Step 2: Run edksetup.bat Rebuild
+			$runRebuild1 = Read-Host "Do you want to run 'edksetup.bat Rebuild'? (Y/N)"
+			if ($runRebuild1 -eq "Y") {
+				Set-Location -Path $edk2Path
+				Start-Process cmd.exe -ArgumentList "/c edksetup.bat Rebuild"
+			}
+
+			# Step 3: Modify target.txt settings
+			$editTarget = Read-Host "Do you want to modify 'Conf/target.txt'? (Y/N)"
+			if ($editTarget -eq "Y") {
+				Set-Location -Path $edk2Path
+				$filePath = "Conf/target.txt"
+				$lines = Get-Content $filePath
+				$lines = $lines -replace '^TARGET_ARCH .+ = .+', 'TARGET_ARCH = X64'
+				$lines = $lines -replace '^TOOL_CHAIN_TAG .+ = .+', 'TOOL_CHAIN_TAG = VS2019'
+				$lines = $lines -replace '^ACTIVE_PLATFORM .+ = .+', 'ACTIVE_PLATFORM = MdeModulePkg/MdeModulePkg.dsc'
+				$lines | Set-Content $filePath
+			}
+
+			# Step 4: Run edksetup.bat Rebuild and build
+			$runBuild = Read-Host "Do you want to run 'edksetup.bat Rebuild && build'? (Y/N)"
+			if ($runBuild -eq "Y") {
+				Set-Location -Path $edk2Path
+				Start-Process cmd.exe -ArgumentList "/c edksetup.bat Rebuild && build"
+			}
+
+			# Final confirmation
+			$finished = Read-Host "Have all steps completed successfully? (Y/N)"
+			if ($finished -eq "Y") {
+				Write-Host "EDK2 environment successfully configured." -ForegroundColor Yellow
+			}
+
+			Set-Location -Path "$folderBack"
 		}
 	}
 }
@@ -251,9 +250,16 @@ function OptionBootkitsSetUp {
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionBootkitsTools {
 
-	Write-Host "You have selected the option 'Bootkits - Tools -> UEFITool'" -ForegroundColor Green
+	Write-Host "You have selected the option 'Bootkits - Tools -> UEFITool + HxD'" -ForegroundColor Green
 	$response = Read-Host "Do you want to proceed? (Press 'Y')"
 	if ($response -eq "Y") {
+
+		# Temp folder
+		$folderTempBootkitsToolsBinaries = "TemporalBootkitsToolsBinaries"
+		$folderTempBootkitsToolsBinariesPath = Join-Path -Path $PWD -ChildPath $folderTempBootkitsToolsBinaries
+		if (-not (Test-Path -Path $folderTempBootkitsToolsBinariesPath)) {
+			New-Item -ItemType Directory -Path $folderTempBootkitsToolsBinariesPath | Out-Null
+		}
 
 		# ABR_Bootkits_Tools
 		$folderBootkitsTools = "ABR_Bootkits_Tools"
@@ -267,17 +273,43 @@ function OptionBootkitsTools {
 		}
 
 		# UEFITool
-		if (-not (Test-Path -Path "$folderBootkitsToolsPath\UEFITool")) {
+		$install = Read-Host "Do you want to download UEFITool? (Y/N)"
+		if ($install -eq "Y") {
+			if (-not (Test-Path -Path "$folderBootkitsToolsPath\UEFITool")) {
+				Write-Host "Download UEFITool" -ForegroundColor Yellow
 
-			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLUefiTool"], "$folderBootkitsToolsPath\UEFITool.zip")
-			Expand-Archive -Path "$folderBootkitsToolsPath\UEFITool.zip" -DestinationPath "$folderBootkitsToolsPath\UEFITool"
-			Remove-Item "$folderBootkitsToolsPath\UEFITool.zip"
-			Write-Host "Downloaded - UEFITool" -ForegroundColor Yellow
-			
-		} else {
-			Write-Host "The folder '$folderBootkitsToolsPath\UEFITool' already exists in this directory. Unable to proceed." -ForegroundColor Red
+				$webClient = New-Object System.Net.WebClient
+				$webClient.DownloadFile($ConfigURLs["URL_BootkitsTools_UefiTool"], "$folderBootkitsToolsPath\UEFITool.zip")
+				Expand-Archive -Path "$folderBootkitsToolsPath\UEFITool.zip" -DestinationPath "$folderBootkitsToolsPath\UEFITool"
+				Remove-Item "$folderBootkitsToolsPath\UEFITool.zip"
+				Write-Host "Downloaded - UEFITool" -ForegroundColor Yellow
+				
+			} else {
+				Write-Host "The folder '$folderBootkitsToolsPath\UEFITool' already exists in this directory. Unable to proceed." -ForegroundColor Red
+			}
 		}
+
+		# HxD
+		$install = Read-Host "Do you want to install HxD? (Y/N)"
+		if ($install -eq "Y") {
+				Write-Host "Install HxD" -ForegroundColor Yellow
+
+				$webClient = New-Object System.Net.WebClient
+				$webClient.DownloadFile($ConfigURLs["URL_BootkitsTools_HxD"], "$folderTempBootkitsToolsBinariesPath\HxDSetup.zip")
+				Expand-Archive -Path $folderTempBootkitsToolsBinariesPath\HxDSetup.zip -DestinationPath $folderTempBootkitsToolsBinariesPath
+				
+				$process = Start-Process -FilePath "$folderTempBootkitsToolsBinariesPath\HxDSetup.exe" -PassThru
+				$process.WaitForExit()
+				while ($true) {
+					$response = Read-Host "Installation completed? (Y/N)"
+					if ($response -eq "Y") {
+						break
+					}
+				}
+				Write-Host "Installed - HxD" -ForegroundColor Yellow
+		}
+
+		Remove-Item $folderTempBootkitsToolsBinariesPath -Recurse
 	}
 }
 
@@ -309,7 +341,7 @@ function OptionBootkitsPoCs {
 		if (-not (Test-Path -Path $abyssPath)) {
 			$cloneAbyss = Read-Host "Do you want to clone the Abyss repository? (Y/N)"
 			if ($cloneAbyss -eq "Y") {
-				Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URLMyRepositoryBootkit"]) `"$abyssPath`""
+				Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URL_My_RepositoryBootkit"]) `"$abyssPath`""
 				Write-Host "Repository cloned successfully. You'll find basic Bootkit PoCs inside the 'Bootkits' folder." -ForegroundColor Yellow
 			}
 		} else {
@@ -321,7 +353,7 @@ function OptionBootkitsPoCs {
 		Write-Host "For more Proof-of-Concepts, check out the following repository:" -ForegroundColor Cyan
 		Write-Host "   * Awesome Bootkits & Rootkits Resources"
 		Write-Host "      -> Compilation of hundreds of resources, guides, videos, and more"
-		Write-Host "        $($ConfigURLs["URLMyRepositoryAwesome"])" -ForegroundColor DarkYellow
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryAwesome"])" -ForegroundColor DarkYellow
 		Write-Host ""
 	}
 }
@@ -346,7 +378,7 @@ function OptionDebuggingRequirements {
 			Write-Host "Install WinDbg" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLWinDbg"], "$folderTempDebuggingRequirementBinariesPath\windbg.appinstaller")
+			$webClient.DownloadFile($ConfigURLs["URL_DebuggingRequirements_WinDbg"], "$folderTempDebuggingRequirementBinariesPath\windbg.appinstaller")
 			Add-AppxPackage -AppInstallerFile "$folderTempDebuggingRequirementBinariesPath\windbg.appinstaller"
 			Write-Host "Installed - WinDbg" -ForegroundColor Yellow
 		}
@@ -413,9 +445,10 @@ function OptionDebuggingTools {
 		$install = Read-Host "Do you want to download Microsoft Sysinternals Suite Tools? (Y/N)"
 		if ($install -eq "Y") {
 			if (-not (Test-Path -Path $folderDebuggingToolsPath\SysinternalsSuite)) {
+				Write-Host "Download Microsoft Sysinternals Suite" -ForegroundColor Yellow
 
 				$webClient = New-Object System.Net.WebClient
-				$webClient.DownloadFile($ConfigURLs["URLSysinternalsSuite"], "$folderDebuggingToolsPath\SysinternalsSuite.zip")
+				$webClient.DownloadFile($ConfigURLs["URL_DebuggingTools_SysinternalsSuite"], "$folderDebuggingToolsPath\SysinternalsSuite.zip")
 				Expand-Archive -Path $folderDebuggingToolsPath\SysinternalsSuite.zip -DestinationPath $folderDebuggingToolsPath\SysinternalsSuite
 				Remove-Item $folderDebuggingToolsPath\SysinternalsSuite.zip
 				Write-Host "Downloaded - Microsoft Sysinternals Suite" -ForegroundColor Yellow
@@ -431,7 +464,7 @@ function OptionDebuggingTools {
 			Write-Host "Install Process Hacker" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLProcessHacker"], "$folderTempDebuggingToolsBinariesPath\processhacker-2.39-setup.exe")
+			$webClient.DownloadFile($ConfigURLs["URL_DebuggingTools_ProcessHacker"], "$folderTempDebuggingToolsBinariesPath\processhacker-2.39-setup.exe")
 			$process = Start-Process -FilePath "$folderTempDebuggingToolsBinariesPath\processhacker-2.39-setup.exe" -PassThru
 			$process.WaitForExit()
 			while ($true) {
@@ -516,11 +549,11 @@ function OptionDebuggingScripting {
 
 		# Python - pykd-0.3.4.15-cp39-none-win_amd64.whl
 		$webclient = New-Object System.Net.WebClient
-		$webclient.DownloadFile($ConfigURLs["URLPykdWhl"], "$folderWinDbgPythonPath\pykd-0.3.4.15-cp39-none-win_amd64.whl")
+		$webclient.DownloadFile($ConfigURLs["URL_DebuggingScripting_PykdWhl"], "$folderWinDbgPythonPath\pykd-0.3.4.15-cp39-none-win_amd64.whl")
 
 		# Python - pykd.dll
 		$webClient = New-Object System.Net.WebClient
-		$webClient.DownloadFile($ConfigURLs["URLPykdDll"], "$folderWinDbgPythonPath\pykd.dll")
+		$webClient.DownloadFile($ConfigURLs["URL_DebuggingScripting_PykdDll"], "$folderWinDbgPythonPath\pykd.dll")
 
 		Write-Host "Created - WinDbg Python (Scripts)" -ForegroundColor Yellow
 	}
@@ -616,7 +649,7 @@ function OptionRootkitsRequirements {
 			Write-Host "  3. Install Visual Studio." -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLVisualStudio2022"], "$folderTempRootkitsRequirementBinariesPath\VisualStudioSetup.exe")
+			$webClient.DownloadFile($ConfigURLs["URL_RootkitsRequirements_VisualStudio2022"], "$folderTempRootkitsRequirementBinariesPath\VisualStudioSetup.exe")
 			$process = Start-Process -FilePath "$folderTempRootkitsRequirementBinariesPath\VisualStudioSetup.exe" -PassThru
 			$process.WaitForExit()
 			while ($true) {
@@ -635,7 +668,7 @@ function OptionRootkitsRequirements {
 			Write-Host "  1. Ensure that all the pre-selected features are left marked." -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLSdk"], "$folderTempRootkitsRequirementBinariesPath\winsdksetup.exe")
+			$webClient.DownloadFile($ConfigURLs["URL_RootkitsRequirements_Sdk"], "$folderTempRootkitsRequirementBinariesPath\winsdksetup.exe")
 			$process = Start-Process -FilePath "$folderTempRootkitsRequirementBinariesPath\winsdksetup.exe" -PassThru
 			$process.WaitForExit()
 			while ($true) {
@@ -663,7 +696,7 @@ function OptionRootkitsRequirements {
 			Write-Host "     2.1. Ensure that the checkbox for 'Install Windows Driver Kit Visual Studio extension' is selected (it is checked by default). Clicking 'Close' will automatically launch the installer for the extension." -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLWdk"], "$folderTempRootkitsRequirementBinariesPath\wdksetup.exe")
+			$webClient.DownloadFile($ConfigURLs["URL_RootkitsRequirements_Wdk"], "$folderTempRootkitsRequirementBinariesPath\wdksetup.exe")
 			$process = Start-Process -FilePath "$folderTempRootkitsRequirementBinariesPath\wdksetup.exe" -PassThru
 			$process.WaitForExit()
 			while ($true) {
@@ -681,7 +714,7 @@ function OptionRootkitsRequirements {
 			Write-Host "Install Visual Studio Code" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLVisualStudioCode"], "$folderTempRootkitsRequirementBinariesPath\VSCodeUserSetup.exe")
+			$webClient.DownloadFile($ConfigURLs["URL_RootkitsRequirements_VisualStudioCode"], "$folderTempRootkitsRequirementBinariesPath\VSCodeUserSetup.exe")
 			$process = Start-Process -FilePath "$folderTempRootkitsRequirementBinariesPath\VSCodeUserSetup.exe" -PassThru
 			$process.WaitForExit()
 			while ($true) {
@@ -744,7 +777,7 @@ function OptionRootkitsSetUp {
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionRootkitsTools {
 
-	Write-Host "You have selected the option 'Rootkits - Tools -> OSR Driver Loader + Ghydra + IDA Free'" -ForegroundColor Green
+	Write-Host "You have selected the option 'Rootkits - Tools -> OSR Driver Loader + Ghidra + IDA Free'" -ForegroundColor Green
 	$response = Read-Host "Do you want to proceed? (Press 'Y')"
 	if ($response -eq "Y") {
 
@@ -770,9 +803,10 @@ function OptionRootkitsTools {
 		$install = Read-Host "Do you want to download OSR Driver Loader? (Y/N)"
 		if ($install -eq "Y") {
 			if (-not (Test-Path -Path $folderRootkitsToolsPath\OSRDriverLoader)) {
+				Write-Host "Download OSR Driver Loader" -ForegroundColor Yellow
 
 				$webClient = New-Object System.Net.WebClient
-				$webClient.DownloadFile($ConfigURLs["URLOsrLoader"], "$folderRootkitsToolsPath\osrloaderv30.zip")
+				$webClient.DownloadFile($ConfigURLs["URL_RootkitsTools_OsrLoader"], "$folderRootkitsToolsPath\osrloaderv30.zip")
 				Expand-Archive -Path $folderRootkitsToolsPath\osrloaderv30.zip -DestinationPath $folderRootkitsToolsPath\OSRDriverLoader
 				Remove-Item $folderRootkitsToolsPath\osrloaderv30.zip
 				Write-Host "Downloaded - OSR Driver Loader" -ForegroundColor Yellow
@@ -782,19 +816,34 @@ function OptionRootkitsTools {
 			}
 		}
 
-		# Ghydra
-		$install = Read-Host "Do you want to download Ghydra? (Y/N)"
+		# Ghidra
+		$install = Read-Host "Do you want to download Ghidra? (Y/N)"
 		if ($install -eq "Y") {
-			if (-not (Test-Path -Path $folderRootkitsToolsPath\Ghydra)) {
+			if (-not (Test-Path -Path $folderRootkitsToolsPath\Ghidra)) {
 
+				# Java
+				Write-Host "Install Java" -ForegroundColor Yellow
 				$webClient = New-Object System.Net.WebClient
-				$webClient.DownloadFile($ConfigURLs["URLGhydra"], "$folderRootkitsToolsPath\ghidra_11.3_PUBLIC_20250205.zip")
-				Expand-Archive -Path $folderRootkitsToolsPath\ghidra_11.3_PUBLIC_20250205.zip -DestinationPath $folderRootkitsToolsPath\Ghydra
+				$webClient.DownloadFile($ConfigURLs["URL_RootkitsTools_GhidraJava"], "$folderTempRootkitsToolsBinariesPath\jre-8u451-windows-x64.exe")
+				$process = Start-Process -FilePath "$folderTempRootkitsToolsBinariesPath\jre-8u451-windows-x64.exe" -PassThru
+				$process.WaitForExit()
+				while ($true) {
+					$response = Read-Host "Installation completed? (Y/N)"
+					if ($response -eq "Y") {
+						break
+					}
+				}
+
+				# Ghidra
+				Write-Host "Download Ghidra" -ForegroundColor Yellow
+				$webClient = New-Object System.Net.WebClient
+				$webClient.DownloadFile($ConfigURLs["URL_RootkitsTools_Ghidra"], "$folderRootkitsToolsPath\ghidra_11.3_PUBLIC_20250205.zip")
+				Expand-Archive -Path $folderRootkitsToolsPath\ghidra_11.3_PUBLIC_20250205.zip -DestinationPath $folderRootkitsToolsPath\Ghidra
 				Remove-Item $folderRootkitsToolsPath\ghidra_11.3_PUBLIC_20250205.zip
-				Write-Host "Downloaded - Ghydra" -ForegroundColor Yellow
+				Write-Host "Downloaded - Ghidra" -ForegroundColor Yellow
 
 			} else {
-				Write-Host "The folder '$folderRootkitsToolsPath\Ghydra' already exists in this directory. Unable to proceed." -ForegroundColor Red
+				Write-Host "The folder '$folderRootkitsToolsPath\Ghidra' already exists in this directory. Unable to proceed." -ForegroundColor Red
 			}
 		}
 		
@@ -804,7 +853,7 @@ function OptionRootkitsTools {
 			Write-Host "Install IDA Free" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLIdaFree"], "$folderTempRootkitsToolsBinariesPath\idafree84_windows.exe")
+			$webClient.DownloadFile($ConfigURLs["URL_RootkitsTools_IdaFree"], "$folderTempRootkitsToolsBinariesPath\idafree84_windows.exe")
 			$process = Start-Process -FilePath "$folderTempRootkitsToolsBinariesPath\idafree84_windows.exe" -PassThru
 			$process.WaitForExit()
 			while ($true) {
@@ -849,7 +898,7 @@ function OptionRootkitsPoCs {
 		if (-not (Test-Path -Path $benthicPath)) {
 			$clonebenthic = Read-Host "Do you want to clone the Benthic repository? (Y/N)"
 			if ($clonebenthic -eq "Y") {
-				Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URLMyRepositoryRootkit"]) `"$benthicPath`""
+				Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URL_My_RepositoryRootkit"]) `"$benthicPath`""
 				Write-Host "Repository cloned successfully. You'll find basic Rootkit PoCs inside the 'Rootkits' folder." -ForegroundColor Yellow
 			}
 		} else {
@@ -861,7 +910,7 @@ function OptionRootkitsPoCs {
 		Write-Host "For more Proof-of-Concepts, check out the following repository:" -ForegroundColor Cyan
 		Write-Host "   * Awesome Bootkits & Rootkits Resources"
 		Write-Host "      -> Compilation of hundreds of resources, guides, videos, and more"
-		Write-Host "        $($ConfigURLs["URLMyRepositoryAwesome"])" -ForegroundColor DarkYellow
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryAwesome"])" -ForegroundColor DarkYellow
 	}
 }
 
@@ -875,19 +924,19 @@ function OptionResourcesMyRepositories {
 		Write-Host "[+] My Resources and Repositories related to Bootkits & Rootkits:" -ForegroundColor Cyan
 		Write-Host "   * Bootkits & Rootkits Development Environment"
 		Write-Host "      -> Scripts to automate the development environment setup"
-		Write-Host "        $($ConfigURLs["URLMyRepositoryEnvironment"])" -ForegroundColor DarkYellow
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryEnvironment"])" -ForegroundColor DarkYellow
 		Write-Host "   * Awesome Bootkits & Rootkits Resources"
 		Write-Host "      -> Compilation of hundreds of resources, guides, videos, and more"
-		Write-Host "        $($ConfigURLs["URLMyRepositoryAwesome"])" -ForegroundColor DarkYellow
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryAwesome"])" -ForegroundColor DarkYellow
 		Write-Host "   * UEFI Bootkit"
 		Write-Host "      -> A UEFI-based bootkit for research into system boot and the development of UEFI applications and DXE drivers"
-		Write-Host "        $($ConfigURLs["URLMyRepositoryBootkit"])" -ForegroundColor DarkYellow
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryBootkit"])" -ForegroundColor DarkYellow
 		Write-Host "   * Windows Kernel Rootkit"
 		Write-Host "      -> A kernel-mode rootkit for learning and experimentation with Windows internals"
-		Write-Host "        $($ConfigURLs["URLMyRepositoryRootkit"])" -ForegroundColor DarkYellow
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryRootkit"])" -ForegroundColor DarkYellow
 		Write-Host "   * WinDbg Scripting & Debugging"
 		Write-Host "      -> Scripts, commands, and documentation for Windows debugging"
-		Write-Host "        $($ConfigURLs["URLMyRepositoryDebugging"])" -ForegroundColor DarkYellow
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryDebugging"])" -ForegroundColor DarkYellow
 		Write-Host "[+] All repositories are public. Enjoy!" -ForegroundColor Green
 	}
 }
