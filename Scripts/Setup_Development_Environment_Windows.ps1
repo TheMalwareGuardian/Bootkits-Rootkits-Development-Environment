@@ -1,20 +1,29 @@
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# ==========================================================================================
+# Bootkits & Rootkits Development Environment (Windows PowerShell)
+# TheMalwareGuardian
+# ==========================================================================================
+
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 $ConfigURLs = @{
 	# My
+	"URL_My_Linkedin" = "https://www.linkedin.com/in/vazquez-vazquez-alejandro/"
 	"URL_My_Repository" = "https://github.com/TheMalwareGuardian/"
 	"URL_My_RepositoryEnvironment" = "https://github.com/TheMalwareGuardian/Bootkits-Rootkits-Development-Environment"
 	"URL_My_RepositoryAwesome" = "https://github.com/TheMalwareGuardian/Awesome-Bootkits-Rootkits-Development"
-	"URL_My_RepositoryBootkit" = "https://github.com/TheMalwareGuardian/Abismo"
-	"URL_My_RepositoryRootkit" = "https://github.com/TheMalwareGuardian/Bentico"
+	"URL_My_RepositoryBootkit" = "https://github.com/TheMalwareGuardian/Abyss"
+	"URL_My_RepositoryRootkit" = "https://github.com/TheMalwareGuardian/Benthic"
 	"URL_My_RepositoryDebugging" = "https://github.com/TheMalwareGuardian/WinDbg_Scripting"
-	"URL_My_Linkedin" = "https://www.linkedin.com/in/vazquez-vazquez-alejandro/"
 	# Bootkits Requirements
 	"URL_BootkitsRequirements_VisualStudio2019" = "https://download.visualstudio.microsoft.com/download/pr/7c09e2e8-2b3e-4213-93ab-5646874f8a2b/0ac797413a56c6b2772f48a567a32cdddd3b739f5b2af649fcf90be4245762ff/vs_Community.exe"
-	"URLGit" = "https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe"
+	"URL_BootkitsRequirements_Git" = "https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe"
 	"URL_BootkitsRequirements_Python39" = "https://www.python.org/ftp/python/3.9.0/python-3.9.0-amd64.exe"
 	"URL_BootkitsRequirements_Nasm" = "https://www.nasm.us/pub/nasm/releasebuilds/2.16.03/win64/nasm-2.16.03-installer-x64.exe"
 	"URL_BootkitsRequirements_Asl" = "https://downloadmirror.intel.com/852052/iasl-win-20250404.zip"
+	"URL_BootkitsRequirements_Openssl" = "https://slproweb.com/download/Win64OpenSSL-3_5_0.exe"
 	# Bootkits Setup
 	"URL_BootkitsSetup_Edk2" = "https://github.com/tianocore/edk2"
 	# Bootkits Tools
@@ -40,6 +49,8 @@ $ConfigURLs = @{
 	"URL_RootkitsTools_IdaFree" = "https://out7.hex-rays.com/files/idafree84_windows.exe"
 }
 
+
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function Show-Menu {
 	Clear-Host
@@ -59,7 +70,7 @@ function Show-Menu {
 	Write-Host " BOOTKITS"
 	Write-Host "	1a. Bootkits   - Requirements              -> Visual Studio 2019 Community + Git + Python + NASM + ASL"
 	Write-Host "	1b. Bootkits   - Set Up Environment        -> EDK2"
-	Write-Host "	1c. Bootkits   - Tools                     -> UEFITool + HxD"
+	Write-Host "	1c. Bootkits   - Tools                     -> UEFITool + HxD + OpenSSL"
 	Write-Host "	1d. Bootkits   - PoCs                      -> UEFI Applications + DXE Runtime Drivers"
 	Write-Host ""
 	Write-Host " DEBUGGING"
@@ -83,9 +94,11 @@ function Show-Menu {
 	Write-Host "----------------------------------------------------------------------------------------------"
 }
 
+
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionBootkitsRequirements {
-	Write-Host "You have selected the option 'Bootkits - Requirements -> Visual Studio 2019 Community + Git + Python + NASM + ASL'" -ForegroundColor Green
+	Write-Host "You have selected the option 'Bootkits - Requirements -> Visual Studio 2019 Community + Git + Python + NASM + ASL + OpenSSL'" -ForegroundColor Green
 	$response = Read-Host "Do you want to proceed? (Press 'Y')"
 	if ($response -eq "Y") {
 
@@ -123,7 +136,7 @@ function OptionBootkitsRequirements {
 			Write-Host "Install Git" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
-			$webClient.DownloadFile($ConfigURLs["URLGit"], "$folderTempBootkitsRequirementBinariesPath\git.exe")
+			$webClient.DownloadFile($ConfigURLs["URL_BootkitsRequirements_Git"], "$folderTempBootkitsRequirementBinariesPath\git.exe")
 			$process = Start-Process -FilePath "$folderTempBootkitsRequirementBinariesPath\git.exe" -PassThru
 			$process.WaitForExit()
 			while ($true) {
@@ -188,6 +201,8 @@ function OptionBootkitsRequirements {
 	Write-Host "Please restart the computer" -ForegroundColor Magenta
 }
 
+
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionBootkitsSetUp {
 
@@ -246,6 +261,8 @@ function OptionBootkitsSetUp {
 		}
 	}
 }
+
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionBootkitsTools {
@@ -309,9 +326,29 @@ function OptionBootkitsTools {
 				Write-Host "Installed - HxD" -ForegroundColor Yellow
 		}
 
+		# OpenSSL
+		$install = Read-Host "Do you want to install OpenSSL? (Y/N)"
+		if ($install -eq "Y") {
+			Write-Host "Install OpenSSL" -ForegroundColor Yellow
+
+			$webClient = New-Object System.Net.WebClient
+			$webClient.DownloadFile($ConfigURLs["URL_BootkitsRequirements_OpenSSL"], "$folderTempBootkitsToolsBinariesPath\OpenSSL.exe")
+			$process = Start-Process -FilePath "$folderTempBootkitsToolsBinariesPath\OpenSSL.exe" -PassThru
+			$process.WaitForExit()
+			while ($true) {
+				$response = Read-Host "Installation completed? (Y/N)"
+				if ($response -eq "Y") {
+					break
+				}
+			}
+			Write-Host "Installed - OpenSSL" -ForegroundColor Yellow
+		}
+
 		Remove-Item $folderTempBootkitsToolsBinariesPath -Recurse
 	}
 }
+
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionBootkitsPoCs {
@@ -341,7 +378,7 @@ function OptionBootkitsPoCs {
 		if (-not (Test-Path -Path $abyssPath)) {
 			$cloneAbyss = Read-Host "Do you want to clone the Abyss repository? (Y/N)"
 			if ($cloneAbyss -eq "Y") {
-				Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URL_My_RepositoryBootkit"]) `"$abyssPath`""
+				Invoke-Expression -Command "git clone $($ConfigURLs["URL_My_RepositoryBootkit"]) `"$abyssPath`""
 				Write-Host "Repository cloned successfully. You'll find basic Bootkit PoCs inside the 'Bootkits' folder." -ForegroundColor Yellow
 			}
 		} else {
@@ -357,6 +394,8 @@ function OptionBootkitsPoCs {
 		Write-Host ""
 	}
 }
+
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionDebuggingRequirements {
@@ -387,6 +426,8 @@ function OptionDebuggingRequirements {
 	}
 }
 
+
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionDebuggingSetUp {
 
@@ -415,6 +456,8 @@ function OptionDebuggingSetUp {
 		}
 	}
 }
+
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionDebuggingTools {
@@ -479,6 +522,8 @@ function OptionDebuggingTools {
 		Remove-Item $folderTempDebuggingToolsBinariesPath -Recurse
 	}
 }
+
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionDebuggingScripting {
@@ -559,6 +604,8 @@ function OptionDebuggingScripting {
 	}
 }
 
+
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionDebuggingDiagram {
 
@@ -623,6 +670,8 @@ function OptionDebuggingDiagram {
 
 	}
 }
+
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionRootkitsRequirements {
@@ -731,6 +780,8 @@ function OptionRootkitsRequirements {
 	Write-Host "Please restart the computer" -ForegroundColor Magenta
 }
 
+
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionRootkitsSetUp {
 
@@ -773,6 +824,8 @@ function OptionRootkitsSetUp {
 		}
 	}
 }
+
+
 
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionRootkitsTools {
@@ -870,6 +923,8 @@ function OptionRootkitsTools {
 	}
 }
 
+
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionRootkitsPoCs {
 
@@ -914,6 +969,8 @@ function OptionRootkitsPoCs {
 	}
 }
 
+
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionResourcesMyRepositories {
 
@@ -941,6 +998,8 @@ function OptionResourcesMyRepositories {
 	}
 }
 
+
+
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 do {
 	Show-Menu
@@ -966,3 +1025,7 @@ do {
 	Write-Host "Press any key to continue..."
 	$null = $Host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 } while ($choice -ne 'Q')
+
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,4 +1,6 @@
-# 🏴‍☠️ Bootkits & Rootkits Development Environment
+# ***🏴‍☠️ Bootkits & Rootkits Development Environment***
+
+![DEF CON 33 Main Stage Talk](https://img.shields.io/badge/DEF%20CON%2033-Main%20Stage%20Talk-informational?style=for-the-badge&logo=hackaday)
 
 This repository is part of my effort to make Bootkit & Rootkit development more accessible. Setting up a proper environment for low-level development can be tedious and time-consuming, so the scripts provided here automate the setup process, making it easier to configure and start experimenting with bootkits and rootkits.
 
@@ -12,7 +14,7 @@ This repository is part of my effort to make Bootkit & Rootkit development more 
 ---
 
 
-## 📑 Table of Contents
+## ***📑 Table of Contents***
 
 * [Setting Up the Environment for Developing Bootkits and Rootkits on Windows](#environmentwindows)
 * [Setting Up the Environment for Developing Bootkits and Rootkits on Linux](#environmentlinux)
@@ -28,11 +30,11 @@ This repository is part of my effort to make Bootkit & Rootkit development more 
 
 <div id='environmentwindows'/>
 
-## 🖥️ Setting Up the Environment for Developing Bootkits and Rootkits on Windows
+## ***🖥️ Setting Up the Environment for Developing Bootkits and Rootkits on Windows***
 
 This [PowerShell script](https://github.com/TheMalwareGuardian/Bootkits-Rootkits-Development-Environment/blob/main/Scripts/Setup_Development_Environment_Windows.ps1) is meticulously crafted to automate the setup of a development environment specifically tailored for creating [UEFI](https://wiki.osdev.org/UEFI) Bootkits and [Kernel](https://learn.microsoft.com/en-us/windows-hardware/drivers/kernel/) Rootkits on Windows. It streamlines the otherwise manual and time-consuming tasks of installing necessary tools and configuring [TianoCore](https://www.tianocore.org/) [EDK2](https://github.com/tianocore/edk2) (EFI Development Kit) and [WDK](https://learn.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk) (Windows Driver Kit), allowing developers to focus more on bootkits/rootkits innovation and less on setup 😉.
 
-### How to Execute
+### ***How to Execute***
 
 To automate the creation and setup of your development environment, follow these steps:
 
@@ -52,10 +54,10 @@ To automate the creation and setup of your development environment, follow these
 5. Follow the Prompts:
 	- Respond to the on-screen prompts to select your desired action.
 
-### Usage Example
+### ***Usage Example***
 
 <p align="center">
-	<img width="800px" src="Images/Illustrations/Run_Script_Setup_Environment.png">
+	<img width="800px" src="Images/Illustrations/Run_Script_Setup_Environment_Windows.png">
 </p>
 
 The script simplifies the following steps:
@@ -63,51 +65,52 @@ The script simplifies the following steps:
 ```
 ==============================================================================================
 Overview:
-- PowerShell Script for Automating Bootkits/Rootkits Development Environment Setup in Windows
+ - PowerShell Script for Automating Bootkits/Rootkits Development Environment Setup in Windows
 Note:
-- All options have been tested on the latest version of Windows 11 24H2
+ - All options have been tested on the latest version of Windows 11 24H2
 LinkedIn:
-- https://www.linkedin.com/in/vazquez-vazquez-alejandro/
+ - https://www.linkedin.com/in/vazquez-vazquez-alejandro/
 Github:
-- https://github.com/TheMalwareGuardian/
+ - https://github.com/TheMalwareGuardian/
 ==============================================================================================
 
 
 ------------------------------------------- MENU ---------------------------------------------
-BOOTKITS
+ BOOTKITS
 		1a. Bootkits   - Requirements              -> Visual Studio 2019 Community + Git + Python + NASM + ASL
 		1b. Bootkits   - Set Up Environment        -> EDK2
-		1c. Bootkits   - Tools                     -> UEFI Scanners
-		1d. Bootkits   - PoCs                      -> UEFI Applications
+		1c. Bootkits   - Tools                     -> UEFITool + HxD + OpenSSL
+		1d. Bootkits   - PoCs                      -> UEFI Applications + DXE Runtime Drivers
 
-DEBUGGING
+ DEBUGGING
 		2a. Debugging  - Requirements              -> WinDbg
 		2b. Debugging  - Set Up Environment        -> Enable Debugging
 		2c. Debugging  - Tools                     -> Microsoft Sysinternals Suite + Process Hacker
 		2d. Debugging  - Scripting                 -> PoCs - WinDbg Classic + JavaScript + Python PYKD + WinDbg Extensions
 		2e. Debugging  - Debugging Diagram         -> Host (Debugger) + Target (Debugee)
 
-ROOTKITS
+ ROOTKITS
 		3a. Rootkits   - Requirements              -> Visual Studio 2022 Community + SDK + WDK + Visual Studio Code
 		3b. Rootkits   - Set Up Environment        -> Enable Test Mode + Disable Integrity Checks
-		3c. Rootkits   - Tools                     -> OSR Driver Loader + Ghydra + IDA Free
+		3c. Rootkits   - Tools                     -> OSR Driver Loader + Ghidra + IDA Free
 		3d. Rootkits   - PoCs                      -> Kernel Mode Drivers & Console Applications
 
-RESOURCES
+ RESOURCES
 		4a. Resources  - My Repositories           -> A compilation of resources dedicated to bootkit and rootkit development
 
-PROGRAM TERMINATION
+ PROGRAM TERMINATION
 		Q. Exit
 ----------------------------------------------------------------------------------------------
-Choose an option: 3a
-You have selected the option 'Rootkits - Requirements -> Visual Studio 2022 Community + SDK + WDK + Visual Studio Code'
+Choose an option: 1a
+You have selected the option 'Bootkits - Requirements -> Visual Studio 2019 Community + Git + Python + NASM + ASL + OpenSSL'
 Do you want to proceed? (Press 'Y'):
 ```
 
-### Video Walkthrough
+### ***Video Walkthrough***
 
 To make it even easier, I've prepared a complete video walkthrough that shows how to use the setup script step-by-step. From installing dependencies to running your first Bootkit and Rootkit builds, everything is covered visually. Watch the full video [here](https://github.com/TheMalwareGuardian/Bootkits-Rootkits-Development-Environment/tree/main/Videos/Setup_Environment_Windows.mp4).
 
+> **🚧 Coming Soon... 🚧**
 
 ---
 ---
@@ -116,16 +119,76 @@ To make it even easier, I've prepared a complete video walkthrough that shows ho
 
 <div id='environmentlinux'/>
 
-## 🖥️ Setting Up the Environment for Developing Bootkits and Rootkits on Linux
+## ***🖥️ Setting Up the Environment for Developing Bootkits and Rootkits on Linux***
 
-> **🚧 Coming Soon... 🚧**
+This [Bash script](https://github.com/TheMalwareGuardian/Bootkits-Rootkits-Development-Environment/blob/main/Scripts/Setup_Development_Environment_Linux.sh) is meticulously crafted to automate the setup of a development environment specifically tailored for creating [UEFI](https://wiki.osdev.org/UEFI) Bootkits and [Kernel](https://linux-kernel-labs.github.io/refs/heads/master/labs/kernel_modules.html) Rootkits on Linux. It streamlines the otherwise manual and time-consuming tasks of installing necessary tools and configuring [TianoCore](https://www.tianocore.org/) [EDK2](https://github.com/tianocore/edk2) (EFI Development Kit), allowing developers to focus more on bootkits/rootkits innovation and less on setup 😉.
+
 > Work in progress. Stay tuned for updates!
 
 | Feature                | Status          |
 |------------------------|-----------------|
 | Environment Setup      | 🔄 In Progress |
+| Documentation          | 🔄 In Progress |
 | Malware Examples       | ⏳ Researching |
-| Documentation          | ❌ Not Started |
+
+
+### ***How to Execute***
+
+To automate the creation and setup of your development environment, follow these steps:
+
+1. Open a Terminal
+	- You can do this by pressing Ctrl+Alt+T or launching your terminal application.
+
+2. Navigate to the Script Directory
+	- Use the cd command to go to the folder where the script is located
+
+3. Make the Script Executable
+	- Before running the script for the first time, you may need to set the executable permission: chmod +x Setup_Development_Environment_Linux.sh
+
+4. Execute the Script
+	- Run the script by typing ./Setup_Development_Environment_Linux.sh
+
+5. Follow the Prompts
+	- The script may offer a menu or prompt for options. Choose the ones that match your setup needs.
+
+
+### ***Usage Example***
+
+<p align="center">
+	<img width="800px" src="Images/Illustrations/Run_Script_Setup_Environment_Linux.png">
+</p>
+
+The script simplifies the following steps:
+
+```
+==============================================================================================
+Overview:
+ - Bash Script for Automating Bootkits/Rootkits Development Environment Setup in Linux
+Note:
+ - All options have been tested on Ubuntu 22.04 LTS
+LinkedIn:
+ - https://www.linkedin.com/in/vazquez-vazquez-alejandro/
+Github:
+ - https://github.com/TheMalwareGuardian/
+==============================================================================================
+
+------------------------------------------- MENU ---------------------------------------------
+ BOOTKITS
+	1a. Bootkits   - Requirements              -> GCC + Git + Python + NASM + ASL
+	1b. Bootkits   - Set Up Environment        -> EDK2
+	1c. Bootkits   - Tools                     -> OpenSSL + efitools + sbsigntools
+	1d. Bootkits   - Create Keys               -> Generate UEFI test keys and certificates
+
+ ROOTKITS
+	3a. Rootkits   - Requirements              -> Kernel headers
+
+ PROGRAM TERMINATION
+	Q. Exit
+----------------------------------------------------------------------------------------------
+Choose an option: 1a
+[!] You have selected the option 'Bootkits - Requirements -> GCC + Git + Python + NASM + ASL'
+[?] Do you want to proceed? (Press 'Y'):
+```
 
 
 ---
@@ -139,7 +202,7 @@ To make it even easier, I've prepared a complete video walkthrough that shows ho
 
 To help both beginners and experienced developers, I've also put together a collection of useful materials, including videos, articles, malware examples, and other resources to deepen your understanding of bootkits and rootkits:
 
-📌 [TheMalwareGuardian: Awesome Bootkit & Rootkit Development Resources](https://github.com/TheMalwareGuardian/Awesome-Bootkits-Rootkits-Development)
+📌 [TheMalwareGuardian: Awesome Bootkits & Rootkits Development Resources](https://github.com/TheMalwareGuardian/Awesome-Bootkits-Rootkits-Development)
 
 
 ---
@@ -153,9 +216,9 @@ To help both beginners and experienced developers, I've also put together a coll
 
 If you're looking for simple Bootkit & Rootkit projects to get started, check out these repositories, where I share foundational examples to help you build your own:
 
-📌 [TheMalwareGuardian: Abismo - Windows UEFI Bootkit](https://github.com/TheMalwareGuardian/Abismo)
+📌 [TheMalwareGuardian: Abyss - Windows UEFI Bootkit](https://github.com/TheMalwareGuardian/Abyss)
 
-📌 [TheMalwareGuardian: Bentico - Windows Rootkit](https://github.com/TheMalwareGuardian/Bentico)
+📌 [TheMalwareGuardian: Benthic - Windows Rootkit](https://github.com/TheMalwareGuardian/Benthic)
 
 
 ---
