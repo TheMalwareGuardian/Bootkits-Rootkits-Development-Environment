@@ -126,7 +126,7 @@ function OptionBootkitsSetUp {
 	read -p "[?] Do you want to modify Conf/target.txt? (Y/N): " confirm
 	if [[ "$confirm" == "Y" ]]; then
 		sed -i 's|^ACTIVE_PLATFORM.*|ACTIVE_PLATFORM = MdeModulePkg/MdeModulePkg.dsc|' Conf/target.txt
-		sed -i 's/^TOOL_CHAIN_TAG.*/TOOL_CHAIN_TAG = GCC5/' Conf/target.txt
+		sed -i 's/^TOOL_CHAIN_TAG.*/TOOL_CHAIN_TAG = GCC/' Conf/target.txt
 		sed -i 's/^TARGET_ARCH.*/TARGET_ARCH = X64/' Conf/target.txt
 		# Uncomment to enable multi-threaded builds (optional)
 		# sed -i 's/^MAX_CONCURRENT_THREAD_NUMBER.*/MAX_CONCURRENT_THREAD_NUMBER = 9/' Conf/target.txt
@@ -139,7 +139,7 @@ function OptionBootkitsSetUp {
 	if [[ "$confirm" == "Y" ]]; then
 		build
 
-		LOCAL_HELLO_EFI_SRC="$LOCAL_EDK2_SRC_DIR/Build/MdeModule/DEBUG_GCC5/X64/HelloWorld.efi"
+		LOCAL_HELLO_EFI_SRC="$LOCAL_EDK2_SRC_DIR/Build/MdeModule/DEBUG_GCC/X64/HelloWorld.efi"
 		LOCAL_HELLO_EFI_DST="/boot/efi/EFI/Bootkits/HelloWorld.efi"
 
 		if [ -f "$LOCAL_HELLO_EFI_SRC" ]; then
@@ -197,7 +197,7 @@ function OptionBootkitsCreateKeys {
 
 	LOCAL_EDK2_SRC_DIR="$HOME/src/edk2"
 	LOCAL_CERT_DIR="$LOCAL_EDK2_SRC_DIR/KeysAndCertificates"
-	LOCAL_HELLO_EFI_SRC="$LOCAL_EDK2_SRC_DIR/Build/MdeModule/DEBUG_GCC5/X64/HelloWorld.efi"
+	LOCAL_HELLO_EFI_SRC="$LOCAL_EDK2_SRC_DIR/Build/MdeModule/DEBUG_GCC/X64/HelloWorld.efi"
 	LOCAL_HELLO_EFI_SIGNED="$LOCAL_CERT_DIR/HelloWorldSigned.efi"
 	LOCAL_HELLO_EFI_ORIGINAL="$LOCAL_CERT_DIR/HelloWorld.efi"
 
