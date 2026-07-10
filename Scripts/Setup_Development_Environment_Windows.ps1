@@ -14,9 +14,19 @@ $ConfigURLs = @{
 	"URL_My_Repository" = "https://github.com/TheMalwareGuardian/"
 	"URL_My_RepositoryEnvironment" = "https://github.com/TheMalwareGuardian/Bootkits-Rootkits-Development-Environment"
 	"URL_My_RepositoryAwesome" = "https://github.com/TheMalwareGuardian/Awesome-Bootkits-Rootkits-Development"
-	"URL_My_RepositoryBootkit" = "https://github.com/TheMalwareGuardian/Abyss"
-	"URL_My_RepositoryRootkit" = "https://github.com/TheMalwareGuardian/Benthic"
+	"URL_My_RepositoryBootkitsRootkitsTimeline" = "https://github.com/TheMalwareGuardian/Bootkits-Rootkits-Timeline"
+	"URL_My_RepositoryBootkitsDevelopmentStarterPack" = "https://github.com/TheMalwareGuardian/Bootkits-Development-Starter-Pack"
+	"URL_My_RepositoryRootkitsDevelopmentStarterPack" = "https://github.com/TheMalwareGuardian/Rootkits-Development-Starter-Pack"
+	"URL_My_RepositoryBootkitAbyss" = "https://github.com/TheMalwareGuardian/Abyss"
+	"URL_My_RepositoryBootkitAntarctic" = "https://github.com/TheMalwareGuardian/Antarctic"
+	"URL_My_RepositoryRootkitBenthic" = "https://github.com/TheMalwareGuardian/Benthic"
 	"URL_My_RepositoryDebugging" = "https://github.com/TheMalwareGuardian/WinDbg_Scripting"
+	"URL_My_RepositoryUEFIFirmwareAnalysis" = "https://github.com/TheMalwareGuardian/UEFI-Firmware-Analysis"
+	"URL_My_RepositoryUEFIVulnerabilityResearch" = "https://github.com/TheMalwareGuardian/UEFI-Vulnerability-Research-and-Exploit-Development"
+	"URL_My_RepositoryDebuggingUEFI" = "https://github.com/TheMalwareGuardian/Debugging-UEFI-Applications-for-Vulnerability-Research-and-Malware-Analysis"
+	"URL_My_RepositoryAwesomeBYOVUA" = "https://github.com/TheMalwareGuardian/Awesome-Bring-Your-Own-Vulnerable-UEFI-Application"
+	"URL_My_RepositoryQEMUUEFIResearch" = "https://github.com/TheMalwareGuardian/QEMU-UEFI-Research-Environment"
+	"URL_My_RepositoryVMwareSecureBoot" = "https://github.com/TheMalwareGuardian/VMware-Secure-Boot-Custom-Keys"
 	# Bootkits Requirements
 	"URL_BootkitsRequirements_VisualStudio2019" = "https://download.visualstudio.microsoft.com/download/pr/7c09e2e8-2b3e-4213-93ab-5646874f8a2b/0ac797413a56c6b2772f48a567a32cdddd3b739f5b2af649fcf90be4245762ff/vs_Community.exe"
 	"URL_BootkitsRequirements_Git" = "https://github.com/git-for-windows/git/releases/download/v2.49.0.windows.1/Git-2.49.0-64-bit.exe"
@@ -58,7 +68,7 @@ function Show-Menu {
 	Write-Host "Overview:"
 	Write-Host " - PowerShell Script for Automating Bootkits/Rootkits Development Environment Setup in Windows"
 	Write-Host "Note:"
-	Write-Host " - All options have been tested on the latest version of Windows 11 24H2"
+	Write-Host " - All options have been tested on the latest version of Windows 11 25H2"
 	Write-Host "LinkedIn:"
 	Write-Host " - $($ConfigURLs["URL_My_Linkedin"])"
 	Write-Host "Github:"
@@ -71,7 +81,8 @@ function Show-Menu {
 	Write-Host "	1a. Bootkits   - Requirements              -> Visual Studio 2019 Community + Git + Python + NASM + ASL"
 	Write-Host "	1b. Bootkits   - Set Up Environment        -> EDK2"
 	Write-Host "	1c. Bootkits   - Tools                     -> UEFITool + HxD + OpenSSL"
-	Write-Host "	1d. Bootkits   - PoCs                      -> UEFI Applications + DXE Runtime Drivers"
+	Write-Host "	1d. Bootkits   - PoCs                      -> UEFI Applications + DXE Runtime Drivers [Windows / Linux]"
+	Write-Host "	1e. Bootkits   - RE                        -> Windows Boot Process"
 	Write-Host ""
 	Write-Host " DEBUGGING"
 	Write-Host "	2a. Debugging  - Requirements              -> WinDbg"
@@ -112,10 +123,10 @@ function OptionBootkitsRequirements {
 		# Visual Studio
 		$install = Read-Host "Do you want to install Visual Studio 2019 Community? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install Visual Studio 2019 Community:" -ForegroundColor Yellow
-			Write-Host "1. Under the 'Workloads' section -> 'Desktop & Mobile', select 'Desktop development with C++'" -ForegroundColor Yellow
-			Write-Host "2. Look for the 'Individual components' section located as the second option in the top left and select 'MSVC v142 - VS 2019 C++ x64/x86 Spectre-mitigated libs (latest)'" -ForegroundColor Yellow
-			Write-Host "3. Install Visual Studio" -ForegroundColor Yellow
+			Write-Host "Installing Visual Studio 2019 Community:" -ForegroundColor Yellow
+			Write-Host "  1. Under the 'Workloads' section -> 'Desktop & Mobile', select 'Desktop development with C++'" -ForegroundColor Yellow
+			Write-Host "  2. Look for the 'Individual components' section located as the second option in the top left and select 'MSVC v142 - VS 2019 C++ x64/x86 Spectre-mitigated libs (latest)'" -ForegroundColor Yellow
+			Write-Host "  3. Install Visual Studio" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
 			$webClient.DownloadFile($ConfigURLs["URL_BootkitsRequirements_VisualStudio2019"], "$folderTempBootkitsRequirementBinariesPath\vs_Community.exe")
@@ -133,7 +144,7 @@ function OptionBootkitsRequirements {
 		# Git
 		$install = Read-Host "Do you want to install Git? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install Git" -ForegroundColor Yellow
+			Write-Host "Installing Git" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
 			$webClient.DownloadFile($ConfigURLs["URL_BootkitsRequirements_Git"], "$folderTempBootkitsRequirementBinariesPath\git.exe")
@@ -151,7 +162,7 @@ function OptionBootkitsRequirements {
 		# Python
 		$install = Read-Host "Do you want to install Python 3.9? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install Python 3.9" -ForegroundColor Yellow
+			Write-Host "Installing Python 3.9" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
 			$webClient.DownloadFile($ConfigURLs["URL_BootkitsRequirements_Python39"], "$folderTempBootkitsRequirementBinariesPath\python39.exe")
@@ -169,8 +180,8 @@ function OptionBootkitsRequirements {
 		# NASM
 		$install = Read-Host "Do you want to install Netwide Assembler (NASM)? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install Netwide Assembler (NASM):" -ForegroundColor Yellow
-			Write-Host "1. Install it in 'C:\nasm\'" -ForegroundColor Yellow
+			Write-Host "Installing Netwide Assembler (NASM):" -ForegroundColor Yellow
+			Write-Host "  1. Install it in 'C:\nasm\'" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
 			$webClient.DownloadFile($ConfigURLs["URL_BootkitsRequirements_Nasm"], "$folderTempBootkitsRequirementBinariesPath\nasm.exe")
@@ -189,7 +200,7 @@ function OptionBootkitsRequirements {
 		# ASL
 		$install = Read-Host "Do you want to install ACPI Source Language (ASL) Compiler? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install iASL Compiler and Windows ACPI Tools" -ForegroundColor Yellow
+			Write-Host "Installing iASL Compiler and Windows ACPI Tools" -ForegroundColor Yellow
 
 			Invoke-WebRequest -Uri $ConfigURLs["URL_BootkitsRequirements_Asl"] -OutFile "$folderTempBootkitsRequirementBinariesPath\iasl-win.zip"
 			Expand-Archive -Path "$folderTempBootkitsRequirementBinariesPath\iasl-win.zip" -DestinationPath "C:\ASL"
@@ -216,7 +227,7 @@ function OptionBootkitsSetUp {
 		# EDK2
 		$install = Read-Host "Do you want to download and configure EDK2? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install EDK2" -ForegroundColor Yellow
+			Write-Host "Setting up EDK2" -ForegroundColor Yellow
 			$folderBack = $PWD
 
 			# Step 1: Clone repository
@@ -267,7 +278,7 @@ function OptionBootkitsSetUp {
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionBootkitsTools {
 
-	Write-Host "You have selected the option 'Bootkits - Tools -> UEFITool + HxD'" -ForegroundColor Green
+	Write-Host "You have selected the option 'Bootkits - Tools -> UEFITool + HxD + Openssl'" -ForegroundColor Green
 	$response = Read-Host "Do you want to proceed? (Press 'Y')"
 	if ($response -eq "Y") {
 
@@ -285,7 +296,8 @@ function OptionBootkitsTools {
 		if (-not (Test-Path -Path $folderBootkitsToolsPath)) {
 			New-Item -ItemType Directory -Path $folderBootkitsToolsPath | Out-Null
 			Write-Host "Created folder: $folderBootkitsTools" -ForegroundColor Yellow
-		} else {
+		}
+		else {
 			Write-Host "The folder '$folderBootkitsToolsPath' already exists in this directory. Proceeding with downloads." -ForegroundColor Red
 		}
 
@@ -293,7 +305,7 @@ function OptionBootkitsTools {
 		$install = Read-Host "Do you want to download UEFITool? (Y/N)"
 		if ($install -eq "Y") {
 			if (-not (Test-Path -Path "$folderBootkitsToolsPath\UEFITool")) {
-				Write-Host "Download UEFITool" -ForegroundColor Yellow
+				Write-Host "Downloading UEFITool" -ForegroundColor Yellow
 
 				$webClient = New-Object System.Net.WebClient
 				$webClient.DownloadFile($ConfigURLs["URL_BootkitsTools_UefiTool"], "$folderBootkitsToolsPath\UEFITool.zip")
@@ -301,7 +313,8 @@ function OptionBootkitsTools {
 				Remove-Item "$folderBootkitsToolsPath\UEFITool.zip"
 				Write-Host "Downloaded - UEFITool" -ForegroundColor Yellow
 				
-			} else {
+			}
+			else {
 				Write-Host "The folder '$folderBootkitsToolsPath\UEFITool' already exists in this directory. Unable to proceed." -ForegroundColor Red
 			}
 		}
@@ -309,7 +322,7 @@ function OptionBootkitsTools {
 		# HxD
 		$install = Read-Host "Do you want to install HxD? (Y/N)"
 		if ($install -eq "Y") {
-				Write-Host "Install HxD" -ForegroundColor Yellow
+				Write-Host "Installing HxD" -ForegroundColor Yellow
 
 				$webClient = New-Object System.Net.WebClient
 				$webClient.DownloadFile($ConfigURLs["URL_BootkitsTools_HxD"], "$folderTempBootkitsToolsBinariesPath\HxDSetup.zip")
@@ -329,7 +342,7 @@ function OptionBootkitsTools {
 		# OpenSSL
 		$install = Read-Host "Do you want to install OpenSSL? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install OpenSSL" -ForegroundColor Yellow
+			Write-Host "Installing OpenSSL" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
 			$webClient.DownloadFile($ConfigURLs["URL_BootkitsRequirements_OpenSSL"], "$folderTempBootkitsToolsBinariesPath\OpenSSL.exe")
@@ -353,7 +366,7 @@ function OptionBootkitsTools {
 # ---------------------------------------------------------------------------------------------------------------------------------------------------------
 function OptionBootkitsPoCs {
 
-	Write-Host "You have selected the option 'Bootkits - PoCs -> UEFI Applications + DXE Runtime Drivers'" -ForegroundColor Green
+	Write-Host "You have selected the option 'Bootkits - PoCs -> UEFI Applications + DXE Runtime Drivers [Windows / Linux]'" -ForegroundColor Green
 	$response = Read-Host "Do you want to proceed? (Press 'Y')"
 	if ($response -eq "Y") {
 
@@ -368,30 +381,169 @@ function OptionBootkitsPoCs {
 
 		# Message
 		Write-Host ""
-		Write-Host "In earlier versions of this section, I used to include PoCs as embedded base64 blobs that were decoded and saved to disk." -ForegroundColor DarkGray
-		Write-Host "However, over time I've organized those PoCs into GitHub repositories, making it much easier to clone and explore them." -ForegroundColor DarkGray
-		Write-Host "These repositories are ideal for beginners who want to understand how UEFI Applications and DXE Runtime Drivers work in the context of Bootkits and low-level malware." -ForegroundColor DarkGray
+		Write-Host "In earlier versions of this section, I used to include PoCs as embedded base64 blobs that were decoded and saved to disk." -ForegroundColor Yellow
+		Write-Host "However, over time I've organized those PoCs into GitHub repositories, making it much easier to clone and explore them." -ForegroundColor Yellow
+		Write-Host "These repositories are ideal for beginners who want to understand how UEFI Applications and DXE Runtime Drivers work in the context of Bootkits and low-level malware." -ForegroundColor Yellow
 		Write-Host ""
 
-		# Abyss
-		$abyssPath = Join-Path -Path $folderBootkitsPoCsPath -ChildPath "Abyss"
-		if (-not (Test-Path -Path $abyssPath)) {
-			$cloneAbyss = Read-Host "Do you want to clone the Abyss repository? (Y/N)"
+		# Bootkits Development Starter Pack
+		$starterPath = Join-Path -Path $folderBootkitsPoCsPath -ChildPath "Bootkits-Development-Starter-Pack"
+		if (-not (Test-Path -Path $starterPath)) {
+			$cloneAbyss = Read-Host "Do you want to clone the 'Bootkits Development Starter Pack' repository? (Y/N)"
 			if ($cloneAbyss -eq "Y") {
-				Invoke-Expression -Command "git clone $($ConfigURLs["URL_My_RepositoryBootkit"]) `"$abyssPath`""
+				Invoke-Expression -Command "git clone $($ConfigURLs["URL_My_RepositoryBootkitsDevelopmentStarterPack"]) `"$starterPath`""
 				Write-Host "Repository cloned successfully. You'll find basic Bootkit PoCs inside the 'Bootkits' folder." -ForegroundColor Yellow
 			}
-		} else {
+		}
+		else {
+			Write-Host "The folder '$starterPath' already exists in this directory. Unable to proceed." -ForegroundColor Red
+		}
+
+		# Abyss (Windows Bootkit)
+		$abyssPath = Join-Path -Path $folderBootkitsPoCsPath -ChildPath "Abyss"
+		if (-not (Test-Path -Path $abyssPath)) {
+			$cloneAbyss = Read-Host "Do you want to clone the Abyss (Windows Bootkit) repository? (Y/N)"
+			if ($cloneAbyss -eq "Y") {
+				Invoke-Expression -Command "git clone $($ConfigURLs["URL_My_RepositoryBootkitAbyss"]) `"$abyssPath`""
+				Write-Host "Repository cloned successfully. The 'AbyssBootkitPkg' folder contains a fully functional Windows UEFI Bootkit." -ForegroundColor Yellow
+			}
+		}
+		else {
 			Write-Host "The folder '$abyssPath' already exists in this directory. Unable to proceed." -ForegroundColor Red
 		}
+
+		# Antarctic (Linux Bootkit)
+		$antarcticPath = Join-Path -Path $folderBootkitsPoCsPath -ChildPath "Antarctic"
+		if (-not (Test-Path -Path $antarcticPath)) {
+			$cloneAntarctic = Read-Host "Do you want to clone the Antarctic (Linux Bootkit) repository? (Y/N)"
+			if ($cloneAntarctic -eq "Y") {
+				Invoke-Expression -Command "git clone $($ConfigURLs["URL_My_RepositoryBootkitAntarctic"]) `"$antarcticPath`""
+				Write-Host "Repository cloned successfully. The 'AntarcticBootkitPkg' folder contains a fully functional Linux UEFI Bootkit." -ForegroundColor Yellow
+			}
+		}
+		else {
+			Write-Host "The folder '$antarcticPath' already exists in this directory. Unable to proceed." -ForegroundColor Red
+		}
+
+		# Build Instructions for Bootkits
+		Write-Host ""
+		Write-Host "Most Bootkits and PoCs in these repositories follow the EDK2 project structure. That means you will find folders ending with 'Pkg' (e.g., AbyssBootkitPkg, AntarcticBootkitPkg, etc.). Folders that represent complete UEFI packages ready to be compiled using EDK2." -ForegroundColor Yellow
+		Write-Host ""
+		Write-Host "To build them, follow these steps:" -ForegroundColor Yellow
+		Write-Host ""
+		Write-Host "  1. Clone the repository." -ForegroundColor Yellow
+		Write-Host "        git clone https://github.com/TheMalwareGuardian/CHANGEME" -ForegroundColor Yellow
+		Write-Host "  2. Move the repository to a short path (to avoid Windows path length issues):" -ForegroundColor Yellow
+		Write-Host "        C:\edk2\" -ForegroundColor Yellow
+		Write-Host "  3. Initialize submodules (some projects depend on external components):" -ForegroundColor Yellow
+		Write-Host "        git submodule update --init --recursive" -ForegroundColor Yellow
+		Write-Host "  4. Move the *Pkg folder (e.g., AbyssBootkitPkg) into your EDK2 workspace:" -ForegroundColor Yellow
+		Write-Host "        C:\edk2\" -ForegroundColor Yellow
+		Write-Host "  5. Build it using EDK2 build system." -ForegroundColor Yellow
+		Write-Host "        conf\targets.txt" -ForegroundColor Yellow
+		Write-Host "        edksetup.bat Rebuild" -ForegroundColor Yellow
+		Write-Host "        build" -ForegroundColor Yellow
+
+		# Note
+		Write-Host ""
+		Write-Host "NOTE: The Bootkits we build are designed for research, red teaming, and educational purposes :)" -ForegroundColor DarkYellow
 
 		# More PoCs
 		Write-Host ""
 		Write-Host "For more Proof-of-Concepts, check out the following repository:" -ForegroundColor Cyan
 		Write-Host "   * Awesome Bootkits & Rootkits Resources"
-		Write-Host "      -> Compilation of hundreds of resources, guides, videos, and more"
+		Write-Host "      -> Compilation of hundreds of resources, guides, videos, pocs, and more"
 		Write-Host "        $($ConfigURLs["URL_My_RepositoryAwesome"])" -ForegroundColor DarkYellow
 		Write-Host ""
+	}
+}
+
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------
+function OptionBootkitsREBootFiles {
+
+	param(
+		[string]$ScriptDir
+	)
+
+	# Resolve script directory (important when running elevated)
+	if (-not $ScriptDir) {
+		$ScriptDir = Split-Path -Parent $PSCommandPath
+	}
+
+	# Administrator check
+	function Test-Administrator {
+		$currentUser = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
+		return $currentUser.IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+	}
+
+	Write-Host "You have selected the option 'Bootkits - Set Up Environment -> Windows Boot Process'" -ForegroundColor Green
+	$response = Read-Host "Do you want to proceed? (Press 'Y')"
+
+	if ($response -eq "Y") {
+
+		# If NOT admin -> relaunch with elevation preserving ScriptDir
+		if (-not (Test-Administrator)) {
+
+			Write-Host "This script option must be run as an administrator." -ForegroundColor Red
+			Write-Warning "Administrator privileges required. The script will relaunch elevated."
+			Start-Process -FilePath "powershell.exe" ` -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`" -ScriptDir `"$ScriptDir`"" ` -Verb RunAs
+			return
+		}
+
+		# ABR_Bootkits_BootFiles
+		$folderBootkitsBootFiles = "ABR_Bootkits_BootFiles"
+		$folderBootkitsBootFilesPath = Join-Path -Path $ScriptDir -ChildPath $folderBootkitsBootFiles
+
+		if (-not (Test-Path -Path $folderBootkitsBootFilesPath)) {
+			New-Item -ItemType Directory -Path $folderBootkitsBootFilesPath | Out-Null
+			Write-Host "Created folder: $folderBootkitsBootFiles" -ForegroundColor Yellow
+		}
+
+		# Mount ESP
+		Write-Host "Mounting EFI System Partition to U:" -ForegroundColor Cyan
+		cmd /c "mountvol U: /S"
+
+		# Windows Boot Manager (\EFI\Microsoft\Boot\bootmgfw.efi)
+		try {
+			Copy-Item "U:\EFI\Microsoft\Boot\bootmgfw.efi" "$folderBootkitsBootFilesPath\bootmgfw.efi" -Force
+			Write-Host "Copied bootmgfw.efi" -ForegroundColor Green
+		} catch {
+			Write-Host "Failed to copy bootmgfw.efi." -ForegroundColor Red
+		}
+
+		# Windows OS Loader (System32\winload.efi)
+		try {
+			Copy-Item "$env:SystemRoot\System32\winload.efi" "$folderBootkitsBootFilesPath\winload.efi" -Force
+			Write-Host "Copied winload.efi" -ForegroundColor Green
+		} catch {
+			Write-Host "Failed to copy winload.efi" -ForegroundColor Red
+		}
+
+		# Windows NT Kernel (System32\ntoskrnl.exe)
+		try {
+			Copy-Item "$env:SystemRoot\System32\ntoskrnl.exe" "$folderBootkitsBootFilesPath\ntoskrnl.exe" -Force
+			Write-Host "Copied ntoskrnl.exe" -ForegroundColor Green
+		} catch {
+			Write-Host "Failed to copy ntoskrnl.exe" -ForegroundColor Red
+		}
+
+		# Code Integrity (System32\ci.dll)
+		try {
+			Copy-Item "$env:SystemRoot\System32\ci.dll" "$folderBootkitsBootFilesPath\ci.dll" -Force
+			Write-Host "Copied ci.dll" -ForegroundColor Green
+		} catch {
+			Write-Host "Failed to copy ci.dll" -ForegroundColor Red
+		}
+
+		# Unmount ESP
+		Write-Host "Unmounting EFI System Partition from U:" -ForegroundColor Cyan
+		cmd /c "mountvol U: /d"
+
+		# Final message
+		Write-Host "Operation completed. Files saved in $folderBootkitsBootFilesPath" -ForegroundColor Green
+		Write-Host "Load these binaries into IDA or Ghidra, resolve function signatures, and start reversing the Windows boot process." -ForegroundColor DarkGray
 	}
 }
 
@@ -414,7 +566,7 @@ function OptionDebuggingRequirements {
 		# WinDbg
 		$install = Read-Host "Do you want to install WinDbg? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install WinDbg" -ForegroundColor Yellow
+			Write-Host "Installing WinDbg" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
 			$webClient.DownloadFile($ConfigURLs["URL_DebuggingRequirements_WinDbg"], "$folderTempDebuggingRequirementBinariesPath\windbg.appinstaller")
@@ -451,8 +603,15 @@ function OptionDebuggingSetUp {
 				Write-Host "Please restart the computer" -ForegroundColor Magenta
 			}
 		
-		} else {
+		}
+		else {
 			Write-Host "This script option must be run as an administrator." -ForegroundColor Red
+			$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+			if (-not $isAdmin) {
+				Write-Warning "Administrator privileges required. The script will relaunch elevated."
+				Start-Process -FilePath "powershell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+				return
+			}
 		}
 	}
 }
@@ -488,7 +647,7 @@ function OptionDebuggingTools {
 		$install = Read-Host "Do you want to download Microsoft Sysinternals Suite Tools? (Y/N)"
 		if ($install -eq "Y") {
 			if (-not (Test-Path -Path $folderDebuggingToolsPath\SysinternalsSuite)) {
-				Write-Host "Download Microsoft Sysinternals Suite" -ForegroundColor Yellow
+				Write-Host "Downloading Microsoft Sysinternals Suite" -ForegroundColor Yellow
 
 				$webClient = New-Object System.Net.WebClient
 				$webClient.DownloadFile($ConfigURLs["URL_DebuggingTools_SysinternalsSuite"], "$folderDebuggingToolsPath\SysinternalsSuite.zip")
@@ -504,7 +663,7 @@ function OptionDebuggingTools {
 		# Process Hacker
 		$install = Read-Host "Do you want to install Process Hacker? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install Process Hacker" -ForegroundColor Yellow
+			Write-Host "Installing Process Hacker" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
 			$webClient.DownloadFile($ConfigURLs["URL_DebuggingTools_ProcessHacker"], "$folderTempDebuggingToolsBinariesPath\processhacker-2.39-setup.exe")
@@ -654,20 +813,48 @@ function OptionDebuggingDiagram {
 		Write-Host ""
 		Write-Host ""
 		Write-Host " [Microsoft Learn / Windows / Windows Drivers] Set up KDNET network kernel debugging automatically:" -ForegroundColor Yellow
-		Write-Host "     - Ensure both computers are connected via network."
-		Write-Host "     - On the HOST, locate KDNET files:"
-		Write-Host "        C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\kdnet.exe"
-		Write-Host "        C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\VerifiedNICList.xml"
-		Write-Host "     - Copy both files to a network share or USB."
-		Write-Host "     - On the TARGET, create the directory:"
-		Write-Host "        C:\KDNET"
-		Write-Host "     - Copy kdnet.exe and VerifiedNICList.xml to C:\KDNET"
-		Write-Host "     - Run 'kdnet.exe <HostIP> <Port>' on the Target machine."
-		Write-Host "     - Copy and save the generated Debug Key."
-		Write-Host "     - Start WinDbg on the Host with:"
-		Write-Host "        windbg -k net:port=<Port>,key=<Key>"
-		Write-Host "     - Restart the Target machine to start debugging."
-
+		Write-Host "     1. [Target]"
+		Write-Host "        - Create snapshots."
+		Write-Host "            - VMware Workstation -> Right click -> Snapshot -> Take Snapshot..."
+		Write-Host "     2. [Host/Target]"
+		Write-Host "        - Ensure both computers are connected via network."
+		Write-Host "            - [Host]"
+		Write-Host "                - ping 192.168.1.56"
+		Write-Host "            - [Target]"
+		Write-Host "                - ping 192.168.1.21"
+		Write-Host "     3. [Host]"
+		Write-Host "        - Install WinDbg on host."
+		Write-Host "            - Microsoft Store -> Search -> windbg -> Install"
+		Write-Host "     4. [Host]"
+		Write-Host "        - On the host, locate KDNET files:"
+		Write-Host "            - C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\kdnet.exe"
+		Write-Host "            - C:\Program Files (x86)\Windows Kits\10\Debuggers\x64\VerifiedNICList.xml"
+		Write-Host "     5. [Host]"
+		Write-Host "        - Copy both files to a network share or USB."
+		Write-Host "     6. [Target]"
+		Write-Host "        - On the target, create the directory C:\KDNET"
+		Write-Host "            - mkdir C:\KDNET"
+		Write-Host "     7. [Target]"
+		Write-Host "        - Copy kdnet.exe and VerifiedNICList.xml to C:\KDNET"
+		Write-Host "     8. [Target]"
+		Write-Host "        - Allow firewall ports on target machine:"
+		Write-Host "            - Open PowerShell as Administrator"
+		Write-Host "            - New-NetFirewallRule -DisplayName 'Allow ICMP' -Direction Inbound -Protocol ICMPv4 -Action Allow"
+		Write-Host "            - New-NetFirewallRule -DisplayName 'Allow WinDbg TCP' -Direction Inbound -Protocol TCP -LocalPort 50000-50039 -Action Allow"
+		Write-Host "     9. [Target]"
+		Write-Host "        - Run kdnet.exe <HostIP> <Port>."
+		Write-Host "            - Open CMD as Administrator"
+		Write-Host "            - kdnet.exe 192.168.1.21 50000"
+		Write-Host "     10. [Target]"
+		Write-Host "        - Copy and save the generated Debug Key."
+		Write-Host "     11. [Host]"
+		Write-Host "        - Start WinDbg on the Host with windbg -k net:port=<Port>,key=<Key>"
+		Write-Host "            - windbg -k net:port=50000,key=1yv877p0kc57.bgp4t3cyeaki.1tkugu3e7jzby.2fxh4n7i8z13b"
+		Write-Host "     12. [Target]"
+		Write-Host "        - Restart the Target machine to start debugging."
+		Write-Host "            - shutdown -r -t 0"
+		Write-Host "     13. [Host]"
+		Write-Host "        - Confirm connection in WinDbg."
 	}
 }
 
@@ -690,7 +877,7 @@ function OptionRootkitsRequirements {
 		# Visual Studio
 		$install = Read-Host "Do you want to install Visual Studio 2022 Community? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install Visual Studio 2022 Community:" -ForegroundColor Yellow
+			Write-Host "Installing Visual Studio 2022 Community:" -ForegroundColor Yellow
 			Write-Host "  1. Under the 'Workloads' section -> 'Desktop & Mobile', select 'Desktop development with C++'." -ForegroundColor Yellow
 			Write-Host "  2. Look for the 'Individual components' section located as the second option in the top left and select the following components:" -ForegroundColor Yellow
 			Write-Host "     2.1. 'MSVC v143 - VS 2022 C++ x64/x86 Spectre-mitigated libs (latest)'." -ForegroundColor Yellow
@@ -713,7 +900,7 @@ function OptionRootkitsRequirements {
 		# SDK
 		$install = Read-Host "Do you want to install Windows Software Development Kit (SDK)? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install Windows Software Development Kit (SDK):" -ForegroundColor Yellow
+			Write-Host "Installing Windows Software Development Kit (SDK):" -ForegroundColor Yellow
 			Write-Host "  1. Ensure that all the pre-selected features are left marked." -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
@@ -732,7 +919,7 @@ function OptionRootkitsRequirements {
 		# WDK
 		$install = Read-Host "Do you want to install Windows Driver Kit (WDK)? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install Windows Driver Kit (WDK):" -ForegroundColor Yellow
+			Write-Host "Installing Windows Driver Kit (WDK):" -ForegroundColor Yellow
 			Write-Host "  1. Starting with Visual Studio version 17.11.0, the WDK requires the 'Windows Driver Kit' component to be installed in Visual Studio." -ForegroundColor Yellow
 			Write-Host "     1.1. If you see the 'Important Information' popup at the beginning, confirming that your Visual Studio instance does not comply with this prerequisite:" -ForegroundColor Yellow
 			Write-Host "         1.1.1. Stop the WDK installer by closing the popup." -ForegroundColor Yellow
@@ -760,7 +947,7 @@ function OptionRootkitsRequirements {
 		# Visual Studio Code
 		$install = Read-Host "Do you want to install Visual Studio Code? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install Visual Studio Code" -ForegroundColor Yellow
+			Write-Host "Installing Visual Studio Code" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
 			$webClient.DownloadFile($ConfigURLs["URL_RootkitsRequirements_VisualStudioCode"], "$folderTempRootkitsRequirementBinariesPath\VSCodeUserSetup.exe")
@@ -821,6 +1008,12 @@ function OptionRootkitsSetUp {
 
 		} else {
 			Write-Host "This script option must be run as an administrator." -ForegroundColor Red
+			$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)
+			if (-not $isAdmin) {
+				Write-Warning "Administrator privileges required. The script will relaunch elevated."
+				Start-Process -FilePath "powershell.exe" -ArgumentList "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
+				return
+			}
 		}
 	}
 }
@@ -856,7 +1049,7 @@ function OptionRootkitsTools {
 		$install = Read-Host "Do you want to download OSR Driver Loader? (Y/N)"
 		if ($install -eq "Y") {
 			if (-not (Test-Path -Path $folderRootkitsToolsPath\OSRDriverLoader)) {
-				Write-Host "Download OSR Driver Loader" -ForegroundColor Yellow
+				Write-Host "Downloading OSR Driver Loader" -ForegroundColor Yellow
 
 				$webClient = New-Object System.Net.WebClient
 				$webClient.DownloadFile($ConfigURLs["URL_RootkitsTools_OsrLoader"], "$folderRootkitsToolsPath\osrloaderv30.zip")
@@ -875,10 +1068,10 @@ function OptionRootkitsTools {
 			if (-not (Test-Path -Path $folderRootkitsToolsPath\Ghidra)) {
 
 				# Java
-				Write-Host "Install Java" -ForegroundColor Yellow
+				Write-Host "Installing Java" -ForegroundColor Yellow
 				$webClient = New-Object System.Net.WebClient
-				$webClient.DownloadFile($ConfigURLs["URL_RootkitsTools_GhidraJava"], "$folderTempRootkitsToolsBinariesPath\jre-8u451-windows-x64.exe")
-				$process = Start-Process -FilePath "$folderTempRootkitsToolsBinariesPath\jre-8u451-windows-x64.exe" -PassThru
+				$webClient.DownloadFile($ConfigURLs["URL_RootkitsTools_GhidraJava"], "$folderTempRootkitsToolsBinariesPath\jdk.exe")
+				$process = Start-Process -FilePath "$folderTempRootkitsToolsBinariesPath\jdk.exe" -PassThru
 				$process.WaitForExit()
 				while ($true) {
 					$response = Read-Host "Installation completed? (Y/N)"
@@ -888,7 +1081,7 @@ function OptionRootkitsTools {
 				}
 
 				# Ghidra
-				Write-Host "Download Ghidra" -ForegroundColor Yellow
+				Write-Host "Downloading Ghidra" -ForegroundColor Yellow
 				$webClient = New-Object System.Net.WebClient
 				$webClient.DownloadFile($ConfigURLs["URL_RootkitsTools_Ghidra"], "$folderRootkitsToolsPath\ghidra_11.3_PUBLIC_20250205.zip")
 				Expand-Archive -Path $folderRootkitsToolsPath\ghidra_11.3_PUBLIC_20250205.zip -DestinationPath $folderRootkitsToolsPath\Ghidra
@@ -903,7 +1096,7 @@ function OptionRootkitsTools {
 		# IDA Free
 		$install = Read-Host "Do you want to install IDA Free? (Y/N)"
 		if ($install -eq "Y") {
-			Write-Host "Install IDA Free" -ForegroundColor Yellow
+			Write-Host "Installing IDA Free" -ForegroundColor Yellow
 
 			$webClient = New-Object System.Net.WebClient
 			$webClient.DownloadFile($ConfigURLs["URL_RootkitsTools_IdaFree"], "$folderTempRootkitsToolsBinariesPath\idafree84_windows.exe")
@@ -948,13 +1141,26 @@ function OptionRootkitsPoCs {
 		Write-Host "These repositories are ideal for beginners who want to understand how Kernel-Mode Drivers work in the context of Rootkits and low-level malware." -ForegroundColor DarkGray
 		Write-Host ""
 
-		# Benthic
+		# Rootkits Development Starter Pack
+		$starterPath = Join-Path -Path $folderRootkitsPoCsPath -ChildPath "Rootkits-Development-Starter-Pack"
+		if (-not (Test-Path -Path $starterPath)) {
+			$cloneAbyss = Read-Host "Do you want to clone the 'Rootkits Development Starter Pack' repository? (Y/N)"
+			if ($cloneAbyss -eq "Y") {
+				Invoke-Expression -Command "git clone $($ConfigURLs["URL_My_RepositoryRootkitsDevelopmentStarterPack"]) `"$starterPath`""
+				Write-Host "Repository cloned successfully. You'll find basic Rootkit PoCs inside the 'Rootkits' folder." -ForegroundColor Yellow
+			}
+		}
+		else {
+			Write-Host "The folder '$starterPath' already exists in this directory. Unable to proceed." -ForegroundColor Red
+		}
+
+		# Benthic (Windows Rootkit)
 		$benthicPath = Join-Path -Path $folderRootkitsPoCsPath -ChildPath "Benthic"
 		if (-not (Test-Path -Path $benthicPath)) {
 			$clonebenthic = Read-Host "Do you want to clone the Benthic repository? (Y/N)"
 			if ($clonebenthic -eq "Y") {
-				Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URL_My_RepositoryRootkit"]) `"$benthicPath`""
-				Write-Host "Repository cloned successfully. You'll find basic Rootkit PoCs inside the 'Rootkits' folder." -ForegroundColor Yellow
+				Invoke-Expression -Command "git clone --recurse-submodules $($ConfigURLs["URL_My_RepositoryRootkitBenthic"]) `"$benthicPath`""
+				Write-Host "Repository cloned successfully. The 'BenthicRootkit' folder contains a fully functional Windows UEFI Rootkit." -ForegroundColor Yellow
 			}
 		} else {
 			Write-Host "The folder '$benthicPath' already exists in this directory. Unable to proceed." -ForegroundColor Red
@@ -978,22 +1184,69 @@ function OptionResourcesMyRepositories {
 	$response = Read-Host "Do you want to proceed? (Press 'Y')"
 
 	if ($response -eq "Y") {
+		Write-Host ""
 		Write-Host "[+] My Resources and Repositories related to Bootkits & Rootkits:" -ForegroundColor Cyan
+		Write-Host ""
 		Write-Host "   * Bootkits & Rootkits Development Environment"
 		Write-Host "      -> Scripts to automate the development environment setup"
 		Write-Host "        $($ConfigURLs["URL_My_RepositoryEnvironment"])" -ForegroundColor DarkYellow
+		Write-Host ""
 		Write-Host "   * Awesome Bootkits & Rootkits Resources"
 		Write-Host "      -> Compilation of hundreds of resources, guides, videos, and more"
 		Write-Host "        $($ConfigURLs["URL_My_RepositoryAwesome"])" -ForegroundColor DarkYellow
-		Write-Host "   * UEFI Bootkit"
-		Write-Host "      -> A UEFI-based bootkit for research into system boot and the development of UEFI applications and DXE drivers"
-		Write-Host "        $($ConfigURLs["URL_My_RepositoryBootkit"])" -ForegroundColor DarkYellow
-		Write-Host "   * Windows Kernel Rootkit"
+		Write-Host ""
+		Write-Host "   * Bootkits & Rootkits Timeline"
+		Write-Host "      -> Curated timeline of bootkits and rootkits observed in the wild"
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryBootkitsRootkitsTimeline"])" -ForegroundColor DarkYellow
+		Write-Host ""
+		Write-Host "   * Bootkits Development Starter Pack"
+		Write-Host "      -> Basic UEFI bootkit PoCs built on top of EDK2"
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryBootkitsDevelopmentStarterPack"])" -ForegroundColor DarkYellow
+		Write-Host ""
+		Write-Host "   * Rootkits Development Starter Pack"
+		Write-Host "      -> Basic kernel-mode rootkit PoCs"
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryRootkitsDevelopmentStarterPack"])" -ForegroundColor DarkYellow
+		Write-Host ""
+		Write-Host "   * Abyss - UEFI Bootkit (Windows)"
+		Write-Host "      -> A UEFI-based bootkit targeting the Windows boot chain"
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryBootkitAbyss"])" -ForegroundColor DarkYellow
+		Write-Host ""
+		Write-Host "   * Antarctic - UEFI Bootkit (Linux)"
+		Write-Host "      -> A UEFI-based bootkit targeting the Linux boot chain"
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryBootkitAntarctic"])" -ForegroundColor DarkYellow
+		Write-Host ""
+		Write-Host "   * Benthic - Windows Kernel Rootkit"
 		Write-Host "      -> A kernel-mode rootkit for learning and experimentation with Windows internals"
-		Write-Host "        $($ConfigURLs["URL_My_RepositoryRootkit"])" -ForegroundColor DarkYellow
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryRootkitBenthic"])" -ForegroundColor DarkYellow
+		Write-Host ""
 		Write-Host "   * WinDbg Scripting & Debugging"
 		Write-Host "      -> Scripts, commands, and documentation for Windows debugging"
 		Write-Host "        $($ConfigURLs["URL_My_RepositoryDebugging"])" -ForegroundColor DarkYellow
+		Write-Host ""
+		Write-Host "   * UEFI Firmware Analysis"
+		Write-Host "      -> UEFI firmware analysis and research on known vulnerabilities in early boot components"
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryUEFIFirmwareAnalysis"])" -ForegroundColor DarkYellow
+		Write-Host ""
+		Write-Host "   * UEFI Vulnerability Research and Exploit Development"
+		Write-Host "      -> Research hub for real-world UEFI vulnerabilities and pre-boot attack primitives"
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryUEFIVulnerabilityResearch"])" -ForegroundColor DarkYellow
+		Write-Host ""
+		Write-Host "   * Debugging UEFI Applications for Vulnerability Research and Malware Analysis"
+		Write-Host "      -> Documentation and tooling for debugging UEFI applications in pre-OS environments"
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryDebuggingUEFI"])" -ForegroundColor DarkYellow
+		Write-Host ""
+		Write-Host "   * Awesome Bring Your Own Vulnerable UEFI Application"
+		Write-Host "      -> Curated collection of UEFI vulnerabilities and exploitation techniques for bootkit installation"
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryAwesomeBYOVUA"])" -ForegroundColor DarkYellow
+		Write-Host ""
+		Write-Host "   * QEMU UEFI Research Environment"
+		Write-Host "      -> QEMU/OVMF-based lab with Secure Boot key enrollment and EFI signing workflow"
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryQEMUUEFIResearch"])" -ForegroundColor DarkYellow
+		Write-Host ""
+		Write-Host "   * VMware Secure Boot Custom Keys"
+		Write-Host "      -> VMware environment for enrolling custom PK/KEK/DB and signing EFI binaries"
+		Write-Host "        $($ConfigURLs["URL_My_RepositoryVMwareSecureBoot"])" -ForegroundColor DarkYellow
+		Write-Host ""
 		Write-Host "[+] All repositories are public. Enjoy!" -ForegroundColor Green
 	}
 }
@@ -1009,6 +1262,7 @@ do {
 		'1b' { OptionBootkitsSetUp }
 		'1c' { OptionBootkitsTools }
 		'1d' { OptionBootkitsPoCs }
+		'1e' { OptionBootkitsREBootFiles }
 		'2a' { OptionDebuggingRequirements }
 		'2b' { OptionDebuggingSetUp }
 		'2c' { OptionDebuggingTools }
